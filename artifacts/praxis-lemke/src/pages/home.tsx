@@ -279,7 +279,7 @@ export default function Home() {
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Dr. Kalle Lemke</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Herr Kalle Lemke</h2>
               <p className="text-lg text-foreground/80 mb-6 leading-relaxed">
                 Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehrt Dr. Lemke in seine Heimatstadt Duisburg zurück. Sein Ansatz verbindet medizinisches Fachwissen mit einem tiefen Verständnis für individuelle Lebenssituationen.
               </p>
