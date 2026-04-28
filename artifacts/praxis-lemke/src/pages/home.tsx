@@ -98,7 +98,6 @@ export default function Home() {
           </div>
         )}
       </nav>
-
       {/* 2. Hero */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -110,12 +109,13 @@ export default function Home() {
           <div className="max-w-3xl">
             <FadeIn>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-                Psychiatrie & Psychotherapie<br className="hidden md:block" /> in Duisburg
+                D.ellplatzpraxis<br className="hidden md:block" /> 
+                Herr Kalle Lemke
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl leading-relaxed">
-                Individuelle Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
+                Facharzt für Psychiatrie & Psychotherapie – persönlich vor Ort oder per Videosprechstunde.
               </p>
             </FadeIn>
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
@@ -126,7 +126,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 3. Praxisphilosophie */}
       <section className="py-20 md:py-32 bg-light">
         <div className="container mx-auto px-4 md:px-6">
@@ -134,14 +133,11 @@ export default function Home() {
             <FadeIn>
               <HeartHandshake className="w-12 h-12 text-primary mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ganzheitliche Behandlung im Mittelpunkt</h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                In unserer Praxis steht der Mensch in seiner gesamten Lebenssituation im Mittelpunkt. Wir betrachten nicht nur Symptome, sondern beziehen medizinische, psychologische und soziale Aspekte in die Behandlung mit ein. Gemeinsam entwickeln wir einen individuellen Therapieansatz, der zu Ihrer persönlichen Situation passt.
-              </p>
+              <p className="text-lg text-foreground/80 leading-relaxed">In meiner Praxis betrachte ich Sie nicht nur aus medizinischer Sicht, sondern als Mensch in Ihrer gesamten Lebenssituation. Neben körperlichen Aspekten fließen auch psychologische und soziale Faktoren in die Behandlung mit ein. Gemeinsam entwickeln wir einen Ansatz, der zu Ihnen passt – individuell, nachvollziehbar und in Ihrem Tempo.</p>
             </FadeIn>
           </div>
         </div>
       </section>
-
       {/* 4. Leistungen */}
       <section id="leistungen" className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
@@ -200,7 +196,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 5. Videosprechstunde */}
       <section className="py-20 md:py-32 bg-secondary text-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
@@ -240,7 +235,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 6. Ablauf */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
@@ -275,7 +269,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 7. Über den Arzt */}
       <section id="ueber-uns" className="py-20 md:py-32 bg-light">
         <div className="container mx-auto px-4 md:px-6">
@@ -307,7 +300,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 8. Standort */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
@@ -333,7 +325,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
       {/* 9. Kontakt & Öffnungszeiten */}
       <section id="kontakt" className="py-20 md:py-32 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
@@ -405,7 +396,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 10. Abrechnung */}
       <section className="py-20 bg-light">
         <div className="container mx-auto px-4 md:px-6">
@@ -419,7 +409,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
       {/* 11. Footer */}
       <footer className="bg-accent text-white/80 py-16">
         <div className="container mx-auto px-4 md:px-6">
