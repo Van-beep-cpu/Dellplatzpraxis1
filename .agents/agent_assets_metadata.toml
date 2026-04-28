@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "55qWar8N0YFgiWLI4_3Sd"
+uri = "file://artifacts/praxis-lemke/src/assets/images/hero-bg.png"
+type = "image"
+title = "Hero therapy room background"
+
+[[generated]]
+id = "17yoQ4Pg-fs3NZ2i1FlFV"
+uri = "file://artifacts/praxis-lemke/src/assets/images/video-consult.png"
+type = "image"
+title = "Video consultation"
+
+[[generated]]
+id = "0RdLAdM6UaYQdHNGWPeO-"
+uri = "file://artifacts/praxis-lemke/src/assets/images/dr-lemke.png"
+type = "image"
+title = "Professional doctor portrait"

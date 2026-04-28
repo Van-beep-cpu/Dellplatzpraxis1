@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Stellplatzpraxis Lemke"
+version = "1.0.0"
+id = "artifacts/praxis-lemke"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23750
+
+[services.development]
+run = "pnpm --filter @workspace/praxis-lemke run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/praxis-lemke", "run", "build" ]
+publicDir = "artifacts/praxis-lemke/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23750"
+BASE_PATH = "/"
