@@ -114,9 +114,7 @@ export default function Home() {
               </h1>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl leading-relaxed">
-                Facharzt für Psychiatrie & Psychotherapie – persönlich vor Ort oder per Videosprechstunde.
-              </p>
+              <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl leading-relaxed">Privatärztliche Praxis für Gesundheit – persönlich vor Ort oder per Videosprechstunde.</p>
             </FadeIn>
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
               <Button size="lg" onClick={() => scrollTo("kontakt")} className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base">
