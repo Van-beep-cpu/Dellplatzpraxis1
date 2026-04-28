@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Assets
-import logoSrc from "@assets/Bildschirmfoto_2026-04-24_um_14.09.30_1777380605271.png";
+import logoSrc from "@assets/ChatGPT_Image_28._Apr._2026,_15_00_16_1777381310408.png";
 import heroBg from "@/assets/images/hero-bg.png";
 import videoConsult from "@/assets/images/video-consult.png";
 import drLemke from "@/assets/images/dr-lemke.png";
@@ -63,7 +63,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
-            <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-10 object-contain" />
+            <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-16 object-contain" style={{ mixBlendMode: "multiply" }} />
           </button>
 
           {/* Desktop Nav */}
@@ -428,7 +428,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
-              <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-10 mb-6 brightness-0 invert opacity-90" />
+              <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-16 mb-6 object-contain" style={{ mixBlendMode: "screen" }} />
               <p className="text-white/60 mb-6">
                 Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
               </p>
