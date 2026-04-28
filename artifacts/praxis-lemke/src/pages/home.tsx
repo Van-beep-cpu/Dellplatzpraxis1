@@ -188,7 +188,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-4">Therapieformen</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Psychotherapie</li>
-                  <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Kurzzeittherapie</li>
+                  <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Schmerztherapie</li>
                   <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Online-Therapie</li>
                 </ul>
               </div>
