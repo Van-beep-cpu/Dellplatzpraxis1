@@ -131,7 +131,7 @@ export default function Home() {
             <FadeIn>
               <HeartHandshake className="w-12 h-12 text-primary mx-auto mb-6" />
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ganzheitliche Behandlung im Mittelpunkt</h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">In meiner Praxis betrachte ich Sie nicht nur aus medizinischer Sicht, sondern als Mensch in Ihrer gesamten Lebenssituation. Neben körperlichen Aspekten fließen auch psychologische und soziale Faktoren in die Behandlung mit ein. Gemeinsam entwickeln wir einen Ansatz, der zu Ihnen passt – individuell, nachvollziehbar und in Ihrem Tempo.</p>
+              <p className="text-lg text-foreground/80 leading-relaxed">In meiner Praxis in Duisburg begleite ich Sie bei psychischen und psychosomatischen Beschwerden mit einem ganzheitlichen Ansatz. Dabei betrachte ich nicht nur einzelne Symptome, sondern beziehe auch psychologische und soziale Aspekte in die Behandlung mit ein. Gemeinsam schauen wir, welcher Therapie- oder Behandlungsansatz für Ihre persönliche Situation sinnvoll ist. Falls erforderlich, kann die Behandlung auch medikamentös unterstützt werden – stets in enger Abstimmung mit Ihnen. Ein besonderer Schwerpunkt liegt unter anderem in der Behandlung von Depressionen, Suchterkrankungen sowie chronischen Schmerzsyndromen. Ich freue mich darauf, Sie kennenzulernen.</p>
             </FadeIn>
           </div>
         </div>
@@ -158,7 +158,8 @@ export default function Home() {
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Depressionen</li>
                   <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Angststörungen</li>
-                  <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Lebenskrisen</li>
+                  <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Lebenskrisen</li> 
+                  <li className="flex items-center gap-3 text-foreground/80"><CheckCircle2 size={18} className="text-primary/60" /> Burnout</li>
                 </ul>
               </div>
             </FadeIn>
