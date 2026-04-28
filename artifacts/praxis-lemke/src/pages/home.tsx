@@ -280,10 +280,7 @@ export default function Home() {
             
             <FadeIn delay={0.2}>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Herr Kalle Lemke</h2>
-              <p className="text-lg text-foreground/80 mb-6 leading-relaxed">Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten. Eine sorgfältige Diagnostik und eine auf Ihre Bedürfnisse abgestimmte Therapieplanung bilden die Grundlage unserer gemeinsamen Arbeit.</p>
-              <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                Wir nehmen uns Zeit für Sie. Eine gründliche Diagnostik und eine auf Ihre Bedürfnisse zugeschnittene Therapieplanung sind das Fundament unserer gemeinsamen Arbeit.
-              </p>
+              <p className="text-lg text-foreground/80 mb-8 leading-relaxed">Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten. Eine sorgfältige Diagnostik und eine auf Ihre Bedürfnisse abgestimmte Therapieplanung bilden die Grundlage unserer gemeinsamen Arbeit.</p>
               
               <div className="bg-white p-6 rounded-2xl shadow-sm inline-block">
                 <p className="font-medium text-foreground mb-2 flex items-center gap-2">
