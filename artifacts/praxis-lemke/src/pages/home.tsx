@@ -122,9 +122,6 @@ export default function Home() {
               <Button size="lg" onClick={() => scrollTo("kontakt")} className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base">
                 Termin buchen
               </Button>
-              <Button size="lg" variant="outline" onClick={() => window.location.href = 'tel:116117'} className="rounded-full px-8 h-14 text-base border-foreground/20 hover:bg-foreground/5">
-                Jetzt anrufen
-              </Button>
             </FadeIn>
           </div>
         </div>
