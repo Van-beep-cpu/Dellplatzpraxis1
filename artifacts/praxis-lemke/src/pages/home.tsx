@@ -104,23 +104,42 @@ export default function Home() {
           <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-3xl">
+
             <FadeIn>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-6 leading-[1.1]">
-                D.ellplatzpraxis<br className="hidden md:block" /> 
-                Herr Kalle Lemke
+              <p className="text-sm text-foreground/60 mb-3">
+                Willkommen in der D.ellplatzpraxis
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.05}>
+              <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-foreground mb-4 leading-[1.1]">
+                Kalle Lemke
               </h1>
             </FadeIn>
+
             <FadeIn delay={0.1}>
-              <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl leading-relaxed">Privatärztliche Praxis für Gesundheit – persönlich vor Ort oder per Videosprechstunde.</p>
+              <p className="text-lg md:text-xl text-foreground/70 mb-4 max-w-2xl leading-relaxed">Privatärztliche Praxis für Gesundheit</p>
             </FadeIn>
+
+            <FadeIn delay={0.15}>
+              <p className="text-base md:text-lg text-foreground/70 mb-10 max-w-2xl leading-relaxed">
+                Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
+              </p>
+            </FadeIn>
+
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={() => scrollTo("kontakt")} className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base">
+              <Button 
+                size="lg" 
+                onClick={() => scrollTo("kontakt")} 
+                className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base"
+              >
                 Termin buchen
               </Button>
             </FadeIn>
+
           </div>
         </div>
       </section>
