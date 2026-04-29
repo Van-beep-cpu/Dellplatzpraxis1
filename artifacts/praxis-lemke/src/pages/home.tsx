@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 // Assets
 import logoSrc from "@assets/logo.png";
 import heroBg from "@/assets/images/hero-bg1.jpg";
-import videoConsult from "@/assets/images/video-consult.png";
+import videoConsult from "@/assets/images/videofoto.jpg";
 import drLemke from "@/assets/images/foto.png";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => (
@@ -243,9 +243,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Behandlung von zuhause</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Termine müssen nicht kompliziert sein</h2>
               <p className="text-lg text-white/75 mb-10 leading-relaxed">
-                Wir bieten Ihnen die Möglichkeit, Termine bequem per Videosprechstunde wahrzunehmen – sicher, diskret und ohne Anfahrtsweg.
+                Sprechen Sie mit mir ganz entspannt von zuhause aus – 
+                ohne Anfahrt, ohne Wartezimmer, in einer Umgebung, in der Sie sich wohlfühlen.
               </p>
 
               <ul className="space-y-5 mb-12">
