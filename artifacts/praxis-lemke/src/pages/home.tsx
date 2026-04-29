@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Assets
-import logoSrc from "@assets/ChatGPT Image 28. Apr. 2026, 15_00_16 (1).png";
+import logoSrc from "@assets/ChatGPT_Image_28._Apr._2026,_15_00_16_1777381310408.png";
 import heroBg from "@/assets/images/hero-bg1.jpg";
 import videoConsult from "@/assets/images/video-consult.png";
 import drLemke from "@/assets/images/dr-lemke.png";
@@ -63,7 +63,7 @@ export default function Home() {
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
-            <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-20 object-contain" style={{ mixBlendMode: "multiply" }} />
+            <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-18 object-contain" style={{ mixBlendMode: "multiply" }} />
           </button>
 
           {/* Desktop Nav */}
