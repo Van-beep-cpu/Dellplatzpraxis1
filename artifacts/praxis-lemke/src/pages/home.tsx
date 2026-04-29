@@ -197,7 +197,7 @@ export default function Home() {
                 <div className="w-13 h-13 bg-light rounded-xl flex items-center justify-center mb-6 text-primary">
                   <Brain size={26} />
                 </div>
-                <h3 className="text-xl font-semibold mb-5">Psychische Gesundheit</h3>
+                <h3 className="text-xl font-semibold mb-5">Behandlungsfelder</h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Depressionen</li>
                   <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Angststörungen</li>
@@ -370,7 +370,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -525,7 +525,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 dellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
+          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 Stellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
         </div>
       </footer>
     </div>
