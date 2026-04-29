@@ -124,7 +124,7 @@ export default function Home() {
           <div className="max-w-3xl">
 
             <FadeIn>
-              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">Willkommen in der D.ellplatzpraxis</p>
+              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">Willkommen in der Dellplatzpraxis</p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
