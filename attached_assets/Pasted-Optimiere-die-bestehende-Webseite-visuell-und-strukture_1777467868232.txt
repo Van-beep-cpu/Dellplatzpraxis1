@@ -1,0 +1,101 @@
+Optimiere die bestehende Webseite visuell und strukturell, ohne Inhalte inhaltlich zu verändern. Fokus nur auf Design, Lesbarkeit, Hierarchie und moderne UI/UX.
+
+Ziel: ruhige, hochwertige, vertrauensvolle Arztpraxis-Website (Psychiatrie / Psychotherapie), modern und nicht generisch.
+
+---
+
+1. NAVBAR:
+- Logo deutlich größer darstellen (ca. h-12 bis h-14), korrekt skalieren (object-contain)
+- Falls das Logo zu viel Rand hat, visuell leicht vergrößern (scale), sodass es optisch größer wirkt
+- Navigation Links ("Leistungen", "Über uns", "Kontakt") größer machen → text-base bis text-lg
+- Button "Termin buchen":
+  → h-12
+  → px-6
+  → text-base
+  → rounded-full
+- Navbar mehr vertikalen Abstand geben (py-4)
+- Alignment ruhig und sauber halten
+
+---
+
+2. FARBEN:
+- Den aktuellen Grünton leicht entsättigen und ruhiger gestalten
+- Ziel: moderner, medizinisch ruhiger Grünton (nicht grell)
+- Konsistent anwenden auf Buttons, Icons und Highlights
+
+---
+
+3. TYPOGRAFIE:
+- Überschriften moderner und cleaner gestalten (z. B. Inter oder ähnliche Schrift)
+- Klare Hierarchie:
+  → H1 deutlich größer
+  → H2/H3 abgestuft
+- Body Text gut lesbar lassen
+
+---
+
+4. HERO & SPACING:
+- Mehr Abstand zwischen Headline, Subline und Button
+- Generell mehr Weißraum für ruhigere Wirkung
+- Konsistente Section-Abstände
+
+---
+
+5. TEXTBLOCK "GANZHEITLICHE BEHANDLUNG":
+- Langen Text in mehrere Absätze aufteilen
+- max-width setzen
+- line-height erhöhen (leading-relaxed)
+
+---
+
+6. LEISTUNGS-KARTEN:
+- Cards moderner machen:
+  → shadow-sm bis shadow-md
+  → hover:shadow-lg
+  → transition hinzufügen
+- Border weicher machen
+- Gleichmäßige Abstände
+
+---
+
+7. VIDEO-/ONLINE-SECTION:
+- Abstand zwischen Text und Bild erhöhen
+- Layout besser ausbalancieren
+- Buttons konsistent gestalten
+
+---
+
+8. "DER WEG ZU UNS":
+- Verbindungslinie subtiler machen (dünner oder transparenter)
+- Spacing verbessern
+
+---
+
+9. KONTAKTBEREICH:
+- Google Maps Karte direkt in den Kontaktbereich integrieren
+- Keine separate Map-Section
+- Karte modern darstellen (z. B. abgerundet)
+- Kontaktinfos + Karte als Einheit
+
+---
+
+10. FORMULARE:
+- Neue Section „Formulare & Downloads“ hinzufügen
+- Liste mit:
+  → Anamnesebogen
+  → Behandlungsvertrag
+  → Datenschutzerklärung
+- Als Download-Links (Platzhalter "#")
+- Optional Icons
+- Ruhiges, klares Design
+
+---
+
+ALLGEMEIN:
+- Einheitliche Typografie
+- Keine zu kleinen Texte
+- Mehr Luft und Ruhe im Layout
+- Keine komplette Strukturänderung
+- Inhalte NICHT umschreiben
+
+Ziel: hochwertiger, moderner, vertrauensvoller Eindruck

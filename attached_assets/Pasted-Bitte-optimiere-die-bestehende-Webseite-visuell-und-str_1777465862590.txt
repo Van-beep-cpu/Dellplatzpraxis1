@@ -1,0 +1,50 @@
+Bitte optimiere die bestehende Webseite visuell und strukturell, ohne Inhalte zu verändern, sondern nur Design, Lesbarkeit und UI/UX zu verbessern.
+
+1. NAVBAR OPTIMIEREN:
+- Logo deutlich größer darstellen (ca. h-12 bis h-14), dabei sicherstellen, dass es korrekt skaliert wird (object-contain) und kein unnötiger Rand sichtbar ist
+- Falls das Logo Padding enthält, visuell so skalieren, dass es optisch größer wirkt (z. B. scale leicht erhöhen)
+- Navigation Links ("Leistungen", "Über uns", "Kontakt") größer machen → text-base bis text-lg
+- Button "Termin buchen" größer und hochwertiger gestalten:
+  → height erhöhen (h-12)
+  → padding erhöhen (px-6)
+  → Schrift auf text-base
+- Navbar insgesamt etwas mehr vertikalen Abstand geben (py-4), damit sie hochwertiger wirkt
+
+2. FARBEN VERFEINERN:
+- Den aktuellen Grünton etwas weniger knallig und etwas weicher / moderner gestalten
+- Ziel: ruhiger, leicht entsättigter Grünton (mehr Richtung medizinisch / vertrauensvoll statt grell)
+- Konsistent auf Buttons, Icons und Highlights anwenden
+
+3. HERO / ALLGEMEINE SPACING OPTIMIERUNG:
+- Mehr vertikale Abstände zwischen Headline, Subline und Button einbauen
+- Allgemein mehr Weißraum für ruhigere Wirkung
+
+4. TEXTBLOCK (GANZHEITLICHE BEHANDLUNG):
+- Den langen Fließtext im grünen Abschnitt in mehrere Absätze aufteilen
+- Zeilenlänge reduzieren (max-width setzen), damit Text besser lesbar wird
+- Mehr line-height für bessere Lesbarkeit
+
+5. LEISTUNGS-KARTEN VERBESSERN:
+- Cards moderner machen durch:
+  → leichte Schatten (shadow-sm bis shadow-md)
+  → sanfte Hover-Effekte (hover:shadow-lg + transition)
+- Border weicher gestalten (hellere Grautöne verwenden)
+
+6. VIDEO-/ONLINE-SECTION:
+- Layout beibehalten, aber Bild und Text besser ausbalancieren
+- Mehr Abstand zwischen Text und Bild
+- Buttons konsistent zum Rest der Seite gestalten
+
+7. "DER WEG ZU UNS" SECTION:
+- Verbindungslinie zwischen den Steps subtiler machen (dünner oder transparenter)
+- Steps insgesamt moderner wirken lassen (Spacing verbessern)
+
+8. ALLGEMEIN:
+- Einheitliche Typografie sicherstellen (keine zu kleinen Texte)
+- Konsistente Abstände zwischen Sections (mehr Luft)
+- Ziel: moderne, ruhige, vertrauensvolle Arztpraxis-Website (Psychiatrie / Psychotherapie)
+
+WICHTIG:
+- KEINE Inhalte verändern
+- KEINE Struktur komplett umbauen
+- Fokus nur auf Design, Spacing, Lesbarkeit und visuelle Qualität

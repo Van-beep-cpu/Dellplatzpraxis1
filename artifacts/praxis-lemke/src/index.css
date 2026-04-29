@@ -63,9 +63,9 @@
   --popover-foreground: 215 28% 17%;
   --popover-border: 144 25% 90%;
   
-  --primary: 120 43% 59%;
+  --primary: 120 28% 54%;
   --primary-foreground: 0 0% 100%;
-  --primary-border: 120 43% 49%;
+  --primary-border: 120 28% 44%;
   
   --secondary: 200 31% 51%;
   --secondary-foreground: 0 0% 100%;
@@ -83,11 +83,11 @@
   --destructive-foreground: 0 0% 100%;
   --destructive-border: 0 84% 50%;
   
-  --light: 137 50% 93%;
+  --light: 137 30% 93%;
   
   --border: 144 25% 90%;
   --input: 144 25% 90%;
-  --ring: 120 43% 59%;
+  --ring: 120 28% 54%;
   
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
