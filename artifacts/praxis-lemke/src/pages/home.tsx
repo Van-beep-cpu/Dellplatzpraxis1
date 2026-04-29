@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import logoSrc from "@assets/logo.png";
 import heroBg from "@/assets/images/hero-bg1.jpg";
 import videoConsult from "@/assets/images/video-consult.png";
-import drLemke from "@/assets/images/dr-lemke.png";
+import drLemke from "@/assets/images/foto.png";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => (
   <motion.div
@@ -106,7 +106,6 @@ export default function Home() {
           </div>
         )}
       </nav>
-
       {/* 2. Hero */}
       <section className="relative pt-36 pb-24 md:pt-52 md:pb-36 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -152,7 +151,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 3. Praxisphilosophie */}
       <section className="py-24 md:py-36 bg-light">
         <div className="container mx-auto px-4 md:px-8">
@@ -173,7 +171,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 4. Leistungen */}
       <section id="leistungen" className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">
@@ -233,7 +230,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 5. Videosprechstunde */}
       <section className="py-24 md:py-36 bg-secondary text-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
@@ -273,7 +269,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 6. Ablauf */}
       <section className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">
@@ -308,7 +303,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 7. Über den Arzt */}
       <section id="ueber-uns" className="py-24 md:py-36 bg-light">
         <div className="container mx-auto px-4 md:px-8">
@@ -337,7 +331,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* 8. Kontakt & Öffnungszeiten (inkl. Karte) */}
       <section id="kontakt" className="py-24 md:py-36 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
@@ -369,7 +362,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -440,7 +433,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
       {/* 9. Abrechnung */}
       <section className="py-20 bg-light border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
@@ -454,7 +446,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
       {/* 10. Formulare & Downloads */}
       <section className="py-20 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
@@ -489,7 +480,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-
       {/* 11. Footer */}
       <footer className="bg-accent text-white/80 py-16">
         <div className="container mx-auto px-4 md:px-8">
