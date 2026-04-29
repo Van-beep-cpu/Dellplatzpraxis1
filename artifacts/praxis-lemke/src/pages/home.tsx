@@ -107,18 +107,24 @@ export default function Home() {
         )}
       </nav>
       {/* 2. Hero */}
-      <section className="relative pt-36 pb-24 md:pt-52 md:pb-36 overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+
+        {/* Background */}
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-45" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/55 to-background"></div>
+          <img 
+            src={heroBg} 
+            alt="" 
+            className="w-full h-full object-cover opacity-40" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+        {/* Content */}
+        <div className="container mx-auto px-4 md:px-8 relative z-10 py-20">
           <div className="max-w-3xl">
+
             <FadeIn>
-              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">
-                Willkommen in der Stellplatzpraxis
-              </p>
+              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">Willkommen in der D.ellplatzpraxis</p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
@@ -148,8 +154,10 @@ export default function Home() {
                 Termin buchen
               </Button>
             </FadeIn>
+
           </div>
         </div>
+
       </section>
       {/* 3. Praxisphilosophie */}
       <section className="py-24 md:py-36 bg-light">
