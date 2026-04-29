@@ -371,7 +371,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -526,7 +526,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 Stellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
+          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 Dellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
         </div>
       </footer>
     </div>
