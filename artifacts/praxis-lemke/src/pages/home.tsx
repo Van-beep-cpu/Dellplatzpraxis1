@@ -18,7 +18,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 // Assets
-import logoSrc from "@assets/ChatGPT_Image_28._Apr._2026,_15_00_16_1777381310408.png";
+import logoSrc from "@assets/logo.png";
 import heroBg from "@/assets/images/hero-bg1.jpg";
 import videoConsult from "@/assets/images/video-consult.png";
 import drLemke from "@/assets/images/dr-lemke.png";
