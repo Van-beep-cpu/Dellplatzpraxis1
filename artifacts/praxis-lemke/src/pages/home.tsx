@@ -517,9 +517,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">
-            © 2026 Stellplatzpraxis Lemke. Alle Rechte vorbehalten.
-          </div>
+          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 dellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
         </div>
       </footer>
     </div>
