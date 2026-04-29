@@ -134,9 +134,8 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
-                Privatärztliche Praxis für Psychiatrie & Psychotherapie
-              </p>
+              <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">Privatärztliche Praxis für psychotherapeutische Verfahren
+</p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
