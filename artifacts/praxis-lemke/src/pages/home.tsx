@@ -237,46 +237,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* 5. Videosprechstunde */}
-      <section className="py-24 md:py-36 bg-secondary text-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Termine müssen nicht kompliziert sein</h2>
-              <p className="text-lg text-white/75 mb-10 leading-relaxed">
-                Sprechen Sie mit mir ganz entspannt von zuhause aus – 
-                ohne Anfahrt, ohne Wartezimmer, in einer Umgebung, in der Sie sich wohlfühlen.
-              </p>
-
-              <ul className="space-y-5 mb-12">
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Clock size={20} className="text-white" /></div>
-                  Schnellere Termine
-                </li>
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><MapPin size={20} className="text-white" /></div>
-                  Ortsunabhängig
-                </li>
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Video size={20} className="text-white" /></div>
-                  Sichere Kommunikation
-                </li>
-              </ul>
-
-              <Button onClick={() => scrollTo("kontakt")} size="lg" className="bg-white text-secondary hover:bg-white/90 rounded-full px-8 h-12 text-base font-semibold">
-                Termin online buchen
-              </Button>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden relative shadow-2xl">
-                <img src={videoConsult} alt="Videosprechstunde" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl"></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+    
       {/* 6. Ablauf */}
       <section className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">
