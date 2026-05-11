@@ -1,0 +1,62 @@
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import logoSrc from "@assets/logo.png";
+
+export default function Footer() {
+  return (
+    <footer className="bg-accent text-white/80 py-16">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <Link to="/">
+              <img
+                src={logoSrc}
+                alt="Stellplatzpraxis Lemke"
+                className="h-14 mb-6 object-contain"
+                style={{ mixBlendMode: "screen" }}
+              />
+            </Link>
+            <p className="text-white/55 text-sm leading-relaxed">
+              Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-base mb-6">Praxis</h4>
+            <ul className="space-y-4 text-sm">
+              <li><a href="/#leistungen" className="hover:text-white transition-colors">Leistungen</a></li>
+              <li><a href="/#ueber-uns" className="hover:text-white transition-colors">Über den Arzt</a></li>
+              <li><a href="/#kontakt" className="hover:text-white transition-colors">Kontakt & Anfahrt</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-base mb-6">Leistungen</h4>
+            <ul className="space-y-4 text-sm">
+              <li><Link to="/adhs" className="hover:text-white transition-colors">ADHS</Link></li>
+              <li><Link to="/ass" className="hover:text-white transition-colors">Autismus-Spektrum</Link></li>
+              <li><Link to="/psychotherapie" className="hover:text-white transition-colors">Psychotherapie</Link></li>
+              <li><Link to="/schmerztherapie" className="hover:text-white transition-colors">Schmerztherapie</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold text-base mb-6">Rechtliches</h4>
+            <ul className="space-y-4 text-sm mb-6">
+              <li><a href="#" className="hover:text-white transition-colors">Impressum</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
+              <li><Link to="/downloads" className="hover:text-white transition-colors">Downloads</Link></li>
+            </ul>
+            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 text-sm">
+              <a href="/#kontakt">Termin vereinbaren</a>
+            </Button>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">
+          © 2026 Stellplatzpraxis Lemke. Alle Rechte vorbehalten.
+        </div>
+      </div>
+    </footer>
+  );
+}

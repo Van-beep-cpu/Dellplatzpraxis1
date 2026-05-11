@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import {
   Brain,
   Stethoscope,
@@ -11,120 +10,37 @@ import {
   Phone,
   Mail,
   CheckCircle2,
-  Menu,
-  X,
   FileDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/FadeIn";
 
-// Assets
 import logoSrc from "@assets/logo.png";
 import heroBg from "@/assets/images/hero-bg1.jpg";
 import videoConsult from "@/assets/images/videofoto.jpg";
 import drLemke from "@/assets/images/foto.png";
 
-const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.6, delay }}
-    className={className}
-  >
-    {children}
-  </motion.div>
-);
-
 export default function Home() {
-  const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollTo = (id: string) => {
-    setIsMobileMenuOpen(false);
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div className="min-h-screen font-sans text-foreground bg-background">
-      {/* 1. Navbar */}
-      <nav
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"
-        }`}
-      >
-        <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-2">
-            <img
-              src={logoSrc}
-              alt="Stellplatzpraxis Lemke"
-              className="h-14 object-contain"
-              style={{ mixBlendMode: "multiply" }}
-            />
-          </button>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollTo("leistungen")} className="text-base font-medium text-foreground/75 hover:text-primary transition-colors">
-              Leistungen
-            </button>
-            <button onClick={() => scrollTo("ueber-uns")} className="text-base font-medium text-foreground/75 hover:text-primary transition-colors">
-              Über uns
-            </button>
-            <button onClick={() => scrollTo("kontakt")} className="text-base font-medium text-foreground/75 hover:text-primary transition-colors">
-              Kontakt
-            </button>
-            <Button
-              onClick={() => scrollTo("kontakt")}
-              className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-12 text-base"
-            >
-              Termin buchen
-            </Button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Nav */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg py-4 px-4 flex flex-col gap-4">
-            <button onClick={() => scrollTo("leistungen")} className="text-left py-2 text-base font-medium">Leistungen</button>
-            <button onClick={() => scrollTo("ueber-uns")} className="text-left py-2 text-base font-medium">Über uns</button>
-            <button onClick={() => scrollTo("kontakt")} className="text-left py-2 text-base font-medium">Kontakt</button>
-            <Button onClick={() => scrollTo("kontakt")} className="bg-primary text-white w-full rounded-full h-12 text-base">Termin buchen</Button>
-          </div>
-        )}
-      </nav>
-      {/* 2. Hero */}
+    <>
+      {/* 1. Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-
-        {/* Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={heroBg} 
-            alt="" 
-            className="w-full h-full object-cover opacity-40" 
-          />
+          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background"></div>
         </div>
 
-        {/* Content */}
         <div className="container mx-auto px-4 md:px-8 relative z-10 py-20">
           <div className="max-w-3xl">
-
             <FadeIn>
-              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">Willkommen in der Dellplatzpraxis</p>
+              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">
+                Willkommen in der Stellplatzpraxis
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
@@ -134,8 +50,9 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">Privatärztliche Praxis für psychotherapeutische Verfahren
-</p>
+              <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
+                Privatärztliche Praxis für Psychiatrie & Psychotherapie
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
@@ -153,18 +70,19 @@ export default function Home() {
                 Termin buchen
               </Button>
             </FadeIn>
-
           </div>
         </div>
-
       </section>
-      {/* 3. Praxisphilosophie */}
+
+      {/* 2. Praxisphilosophie */}
       <section className="py-24 md:py-36 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <FadeIn>
               <HeartHandshake className="w-11 h-11 text-primary mx-auto mb-7" />
-              <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight">Ganzheitliche Behandlung im Mittelpunkt</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight">
+                Ganzheitliche Behandlung im Mittelpunkt
+              </h2>
               <p className="text-lg text-foreground/75 leading-loose mb-5">
                 In meiner Praxis in Duisburg begleite ich Sie bei psychischen und psychosomatischen Beschwerden mit einem ganzheitlichen Ansatz. Dabei betrachte ich nicht nur einzelne Symptome, sondern beziehe auch psychologische und soziale Aspekte in die Behandlung mit ein.
               </p>
@@ -178,7 +96,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* 4. Leistungen */}
+
+      {/* 3. Leistungen */}
       <section id="leistungen" className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
@@ -237,8 +156,52 @@ export default function Home() {
           </div>
         </div>
       </section>
-    
-      {/* 6. Ablauf */}
+
+      {/* 4. Videosprechstunde */}
+      <section className="py-24 md:py-36 bg-secondary text-white overflow-hidden">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Behandlung von zuhause</h2>
+              <p className="text-lg text-white/75 mb-10 leading-relaxed">
+                Wir bieten Ihnen die Möglichkeit, Termine bequem per Videosprechstunde wahrzunehmen – sicher, diskret und ohne Anfahrtsweg.
+              </p>
+
+              <ul className="space-y-5 mb-12">
+                <li className="flex items-center gap-4 text-base">
+                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Clock size={20} className="text-white" /></div>
+                  Schnellere Termine
+                </li>
+                <li className="flex items-center gap-4 text-base">
+                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><MapPin size={20} className="text-white" /></div>
+                  Ortsunabhängig
+                </li>
+                <li className="flex items-center gap-4 text-base">
+                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Video size={20} className="text-white" /></div>
+                  Sichere Kommunikation
+                </li>
+              </ul>
+
+              <Button
+                size="lg"
+                onClick={() => scrollTo("kontakt")}
+                className="bg-white text-secondary hover:bg-white/90 rounded-full px-8 h-12 text-base font-semibold"
+              >
+                Termin online buchen
+              </Button>
+            </FadeIn>
+
+            <FadeIn delay={0.2} className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden relative shadow-2xl">
+                <img src={videoConsult} alt="Videosprechstunde" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl"></div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Ablauf */}
       <section className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
@@ -252,13 +215,12 @@ export default function Home() {
 
           <div className="max-w-5xl mx-auto relative">
             <div className="hidden md:block absolute top-12 left-12 right-12 h-px bg-border/40 z-0"></div>
-
             <div className="grid md:grid-cols-4 gap-10 relative z-10">
               {[
                 { step: "01", title: "Termin buchen", desc: "Kontaktieren Sie uns telefonisch oder online für einen ersten Termin." },
                 { step: "02", title: "Erstgespräch", desc: "Kennenlernen und Erfassung Ihrer aktuellen Lebenssituation und Beschwerden." },
                 { step: "03", title: "Diagnose", desc: "Sorgfältige medizinische und psychologische Diagnostik." },
-                { step: "04", title: "Behandlung", desc: "Gemeinsame Entwicklung und Umsetzung Ihres individuellen Therapieplans." }
+                { step: "04", title: "Behandlung", desc: "Gemeinsame Entwicklung und Umsetzung Ihres individuellen Therapieplans." },
               ].map((item, i) => (
                 <FadeIn key={item.step} delay={i * 0.1} className="text-center md:text-left flex flex-col md:block items-center">
                   <div className="w-24 h-24 bg-white border border-border rounded-full flex items-center justify-center text-2xl font-semibold text-primary mb-6 shadow-sm">
@@ -272,7 +234,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* 7. Über den Arzt */}
+
+      {/* 6. Über den Arzt */}
       <section id="ueber-uns" className="py-24 md:py-36 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
@@ -287,7 +250,6 @@ export default function Home() {
               <p className="text-lg text-foreground/75 mb-8 leading-loose">
                 Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten. Eine sorgfältige Diagnostik und eine auf Ihre Bedürfnisse abgestimmte Therapieplanung bilden die Grundlage unserer gemeinsamen Arbeit.
               </p>
-
               <div className="bg-white p-6 rounded-2xl shadow-sm inline-block">
                 <p className="font-medium text-foreground mb-3 flex items-center gap-2">
                   <CheckCircle2 size={18} className="text-primary" /> Deutsch & Englisch
@@ -300,7 +262,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* 8. Kontakt & Öffnungszeiten (inkl. Karte) */}
+
+      {/* 7. Kontakt & Öffnungszeiten */}
       <section id="kontakt" className="py-24 md:py-36 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
@@ -313,7 +276,6 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-12">
             <FadeIn>
               <h3 className="text-xl font-semibold mb-7">Kontakt</h3>
-
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
                   <div className="w-11 h-11 bg-light rounded-full flex items-center justify-center text-primary shrink-0">
@@ -331,7 +293,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -357,7 +319,6 @@ export default function Home() {
 
             <FadeIn delay={0.2}>
               <h3 className="text-xl font-semibold mb-7">Öffnungszeiten</h3>
-
               <div className="bg-white p-7 rounded-2xl shadow-sm border border-border">
                 <table className="w-full">
                   <tbody className="divide-y divide-border">
@@ -387,7 +348,6 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          {/* Google Maps integrated */}
           <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[380px] md:h-[450px] rounded-2xl overflow-hidden shadow-sm border border-border">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9972370724036!2d6.7640248!3d51.4287841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf67b822d8e7%3A0x63ce9a75d5e2197f!2sGr%C3%BCnstra%C3%9Fe%2017%2C%2047051%20Duisburg%2C%20Germany!5e0!3m2!1sen!2sus!4v1709230588147!5m2!1sen!2sus"
@@ -402,7 +362,8 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-      {/* 9. Abrechnung */}
+
+      {/* 8. Abrechnung */}
       <section className="py-20 bg-light border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
@@ -415,13 +376,15 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-      {/* 10. Formulare & Downloads */}
+
+      {/* 9. Formulare & Downloads */}
       <section className="py-20 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="max-w-2xl mx-auto">
             <h2 className="text-3xl font-semibold tracking-tight mb-3 text-center">Formulare & Downloads</h2>
-            <p className="text-foreground/60 text-center mb-10">Bitte laden Sie die folgenden Dokumente vor Ihrem ersten Termin herunter.</p>
-
+            <p className="text-foreground/60 text-center mb-10">
+              Bitte laden Sie die folgenden Dokumente vor Ihrem ersten Termin herunter.
+            </p>
             <div className="space-y-3">
               {[
                 { label: "Anamnesebogen", desc: "Bitte ausgefüllt zum Erstgespräch mitbringen." },
@@ -449,46 +412,6 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
-      {/* 11. Footer */}
-      <footer className="bg-accent text-white/80 py-16">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-              <img src={logoSrc} alt="Stellplatzpraxis Lemke" className="h-14 mb-6 object-contain" style={{ mixBlendMode: "screen" }} />
-              <p className="text-white/55 text-sm leading-relaxed">
-                Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-white font-semibold text-base mb-6">Praxis</h4>
-              <ul className="space-y-4 text-sm">
-                <li><button onClick={() => scrollTo("leistungen")} className="hover:text-white transition-colors">Leistungen</button></li>
-                <li><button onClick={() => scrollTo("ueber-uns")} className="hover:text-white transition-colors">Über den Arzt</button></li>
-                <li><button onClick={() => scrollTo("kontakt")} className="hover:text-white transition-colors">Kontakt & Anfahrt</button></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-semibold text-base mb-6">Rechtliches</h4>
-              <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Impressum</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-white font-semibold text-base mb-6">Sprechzeiten</h4>
-              <p className="text-white/55 mb-4 text-sm">Mo – Fr nach Vereinbarung</p>
-              <Button onClick={() => scrollTo("kontakt")} variant="outline" className="border-white/20 text-white hover:bg-white/10 text-sm">
-                Termin vereinbaren
-              </Button>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">© 2026 Dellplatzpraxis Lemke. Alle Rechte vorbehalten.</div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
