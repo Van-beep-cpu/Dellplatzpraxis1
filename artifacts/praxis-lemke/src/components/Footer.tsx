@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logoSrc from "@assets/logo.png";
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const anchorHref = (id: string) => `${basePath}/#${id}`;
+
 export default function Footer() {
   return (
     <footer className="bg-accent text-white/80 py-16">
@@ -24,9 +27,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold text-base mb-6">Praxis</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="/#leistungen" className="hover:text-white transition-colors">Leistungen</a></li>
-              <li><a href="/#ueber-uns" className="hover:text-white transition-colors">Über den Arzt</a></li>
-              <li><a href="/#kontakt" className="hover:text-white transition-colors">Kontakt & Anfahrt</a></li>
+              <li><a href={anchorHref("leistungen")} className="hover:text-white transition-colors">Leistungen</a></li>
+              <li><a href={anchorHref("ueber-uns")} className="hover:text-white transition-colors">Über den Arzt</a></li>
+              <li><a href={anchorHref("kontakt")} className="hover:text-white transition-colors">Kontakt & Anfahrt</a></li>
             </ul>
           </div>
 
@@ -48,7 +51,7 @@ export default function Footer() {
               <li><Link to="/downloads" className="hover:text-white transition-colors">Downloads</Link></li>
             </ul>
             <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 text-sm">
-              <a href="/#kontakt">Termin vereinbaren</a>
+              <a href={anchorHref("kontakt")}>Termin vereinbaren</a>
             </Button>
           </div>
         </div>

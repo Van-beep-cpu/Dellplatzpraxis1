@@ -11,6 +11,9 @@ const leistungen = [
   { label: "Schmerztherapie", href: "/schmerztherapie" },
 ];
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const anchorHref = (id: string) => `${basePath}/#${id}`;
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -89,7 +92,7 @@ export default function Navbar() {
             {isLeistungenOpen && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-border/60 py-2 z-50">
                 <a
-                  href="/#leistungen"
+                  href={anchorHref("leistungen")}
                   onClick={(e) => { handleAnchorClick(e, "leistungen"); setIsLeistungenOpen(false); }}
                   className="block px-4 py-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-light transition-colors"
                 >
@@ -111,14 +114,14 @@ export default function Navbar() {
           </div>
 
           <a
-            href="/#ueber-uns"
+            href={anchorHref("ueber-uns")}
             onClick={(e) => handleAnchorClick(e, "ueber-uns")}
             className="text-base font-medium text-foreground/75 hover:text-primary transition-colors"
           >
             Über uns
           </a>
           <a
-            href="/#kontakt"
+            href={anchorHref("kontakt")}
             onClick={(e) => handleAnchorClick(e, "kontakt")}
             className="text-base font-medium text-foreground/75 hover:text-primary transition-colors"
           >
@@ -131,7 +134,7 @@ export default function Navbar() {
             Downloads
           </Link>
           <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-12 text-base">
-            <a href="/#kontakt" onClick={(e) => handleAnchorClick(e, "kontakt")}>
+            <a href={anchorHref("kontakt")} onClick={(e) => handleAnchorClick(e, "kontakt")}>
               Termin buchen
             </a>
           </Button>
@@ -160,7 +163,7 @@ export default function Navbar() {
             {isMobileLeistungenOpen && (
               <div className="ml-4 flex flex-col gap-1 mb-2">
                 <a
-                  href="/#leistungen"
+                  href={anchorHref("leistungen")}
                   onClick={(e) => handleAnchorClick(e, "leistungen")}
                   className="py-2 text-sm text-foreground/65 hover:text-primary"
                 >
@@ -179,14 +182,14 @@ export default function Navbar() {
             )}
           </div>
           <a
-            href="/#ueber-uns"
+            href={anchorHref("ueber-uns")}
             onClick={(e) => handleAnchorClick(e, "ueber-uns")}
             className="py-2 text-base font-medium text-foreground/75"
           >
             Über uns
           </a>
           <a
-            href="/#kontakt"
+            href={anchorHref("kontakt")}
             onClick={(e) => handleAnchorClick(e, "kontakt")}
             className="py-2 text-base font-medium text-foreground/75"
           >
@@ -196,7 +199,7 @@ export default function Navbar() {
             Downloads
           </Link>
           <Button asChild className="bg-primary text-white w-full rounded-full h-12 text-base mt-2">
-            <a href="/#kontakt" onClick={(e) => handleAnchorClick(e, "kontakt")}>
+            <a href={anchorHref("kontakt")} onClick={(e) => handleAnchorClick(e, "kontakt")}>
               Termin buchen
             </a>
           </Button>
