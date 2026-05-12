@@ -17,10 +17,10 @@ export default function Psychotherapie() {
               Therapieangebot
             </div>
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
-              Psychotherapie
+              Psychotherapie & Kurzzeittherapie
             </h1>
             <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed font-light mb-8">
-              Professionelle Begleitung bei psychischen Erkrankungen und Lebenskrisen in Duisburg
+              Professionelle Begleitung bei psychischen Erkrankungen und Lebenskrisen
             </p>
             <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
               <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
@@ -66,36 +66,7 @@ export default function Psychotherapie() {
         </div>
       </section>
 
-      {/* Ablauf */}
-      <section className="py-20 md:py-28 bg-light">
-        <div className="container mx-auto px-4 md:px-8">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Der therapeutische Prozess</h2>
-              <p className="text-foreground/60 max-w-xl mx-auto">Schritt für Schritt zu mehr Wohlbefinden.</p>
-            </div>
-          </FadeIn>
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { icon: <MessageSquare size={22} />, step: "01", title: "Erstgespräch", desc: "Kennenlernen, Anliegen besprechen und schauen, ob wir gut zusammenpassen." },
-              { icon: <ClipboardList size={22} />, step: "02", title: "Diagnostik", desc: "Sorgfältige Einschätzung der Beschwerden und gemeinsame Zieldefinition." },
-              { icon: <HeartHandshake size={22} />, step: "03", title: "Therapie", desc: "Regelmäßige Sitzungen mit erprobten Methoden, individuell angepasst an Ihre Situation." },
-              { icon: <TrendingUp size={22} />, step: "04", title: "Abschluss", desc: "Sicherung der Fortschritte und Vorbereitung auf die Zeit nach der Therapie." },
-            ].map((item, i) => (
-              <FadeIn key={item.step} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-border/60 h-full">
-                  <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center text-accent mb-4">
-                    {item.icon}
-                  </div>
-                  <p className="text-xs text-foreground/40 font-medium mb-1">{item.step}</p>
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+  
 
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">

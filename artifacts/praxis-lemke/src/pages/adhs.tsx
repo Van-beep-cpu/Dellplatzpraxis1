@@ -66,36 +66,7 @@ export default function Adhs() {
         </div>
       </section>
 
-      {/* Ablauf */}
-      <section className="py-20 md:py-28 bg-light">
-        <div className="container mx-auto px-4 md:px-8">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Unser Vorgehen</h2>
-              <p className="text-foreground/60 max-w-xl mx-auto">Strukturiert, transparent und auf Sie zugeschnitten.</p>
-            </div>
-          </FadeIn>
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { icon: <MessageSquare size={22} />, step: "01", title: "Erstgespräch", desc: "Ausführliche Anamnese und Erfassung Ihrer Beschwerden und Lebensgeschichte." },
-              { icon: <ClipboardList size={22} />, step: "02", title: "Diagnostik", desc: "Standardisierte Tests und neuropsychologische Einschätzung zur Diagnosesicherung." },
-              { icon: <Pill size={22} />, step: "03", title: "Behandlungsplan", desc: "Individuelle Planung: medikamentöse Therapie, Coaching oder Psychoedukation." },
-              { icon: <HeartHandshake size={22} />, step: "04", title: "Begleitung", desc: "Regelmäßige Termine zur Anpassung der Therapie und Unterstützung im Alltag." },
-            ].map((item, i) => (
-              <FadeIn key={item.step} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-border/60 h-full">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                    {item.icon}
-                  </div>
-                  <p className="text-xs text-foreground/40 font-medium mb-1">{item.step}</p>
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">

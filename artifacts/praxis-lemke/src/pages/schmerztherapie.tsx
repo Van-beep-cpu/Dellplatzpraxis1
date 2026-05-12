@@ -66,36 +66,7 @@ export default function Schmerztherapie() {
         </div>
       </section>
 
-      {/* Ablauf */}
-      <section className="py-20 md:py-28 bg-light">
-        <div className="container mx-auto px-4 md:px-8">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">Unser Vorgehen</h2>
-              <p className="text-foreground/60 max-w-xl mx-auto">Ganzheitlich, individuell und nachhaltig.</p>
-            </div>
-          </FadeIn>
-          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { icon: <MessageSquare size={22} />, step: "01", title: "Schmerzanamnese", desc: "Ausführliche Befragung zu Ihrer Schmerzgeschichte, Auslösern und bisherigen Therapieversuchen." },
-              { icon: <ClipboardList size={22} />, step: "02", title: "Diagnostik", desc: "Psychosomatische Einschätzung, Schmerzfragebögen und ggf. Koordination mit Fachkollegen." },
-              { icon: <Stethoscope size={22} />, step: "03", title: "Behandlung", desc: "Multimodale Schmerztherapie: Medikation, Psychoedukation und psychotherapeutische Verfahren." },
-              { icon: <TrendingUp size={22} />, step: "04", title: "Verlaufskontrolle", desc: "Regelmäßige Überprüfung des Therapieerfolgs und flexible Anpassung des Behandlungsplans." },
-            ].map((item, i) => (
-              <FadeIn key={item.step} delay={i * 0.1}>
-                <div className="bg-white p-6 rounded-2xl shadow-sm border border-border/60 h-full">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4">
-                    {item.icon}
-                  </div>
-                  <p className="text-xs text-foreground/40 font-medium mb-1">{item.step}</p>
-                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-sm text-foreground/65 leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">

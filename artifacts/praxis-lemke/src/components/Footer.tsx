@@ -19,7 +19,9 @@ export default function Footer() {
                 style={{ mixBlendMode: "screen" }}
               />
             </Link>
-            <p className="text-white/55 text-sm leading-relaxed">Privatärztliche Praxis für Gesundheit.</p>
+            <p className="text-white/55 text-sm leading-relaxed">
+              Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
+            </p>
           </div>
 
           <div>
@@ -53,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">
-          © 2026 Stellplatzpraxis Lemke. Alle Rechte vorbehalten.
+          © Dellplatzpraxis Lemke. Alle Rechte vorbehalten.
         </div>
       </div>
     </footer>
