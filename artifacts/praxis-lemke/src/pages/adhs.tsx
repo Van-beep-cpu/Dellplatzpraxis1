@@ -30,9 +30,8 @@ export default function Adhs() {
           </FadeIn>
         </div>
       </section>
-
       {/* Beschreibung */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
             <FadeIn>
@@ -65,9 +64,6 @@ export default function Adhs() {
           </div>
         </div>
       </section>
-
-     
-
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
