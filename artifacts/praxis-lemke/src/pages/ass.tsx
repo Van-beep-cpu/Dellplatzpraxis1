@@ -12,27 +12,14 @@ export default function Ass() {
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Users size={16} />
-              Spezialisierung
-            </div>
+            
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
               Autismus-Spektrum-Störung (ASS)
             </h1>
-            <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed font-light mb-8">
-              Diagnostik und Begleitung bei Autismus-Spektrum-Störungen im Erwachsenenalter in Duisburg
-            </p>
-            <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-              <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
-                Termin bei Doctolib buchen
-              </a>
-            </Button>
+           
+          
           </FadeIn>
         </div>
-      </section>
-
-      {/* Beschreibung */}
-      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
             <FadeIn>
@@ -65,6 +52,8 @@ export default function Ass() {
           </div>
         </div>
       </section>
+
+    
 
    
 

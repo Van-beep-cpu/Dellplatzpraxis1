@@ -12,21 +12,12 @@ export default function Adhs() {
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Brain size={16} />
-              Spezialisierung
-            </div>
+           
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
               ADHS im Erwachsenenalter
             </h1>
-            <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed font-light">
-              Diagnose, Behandlung und Begleitung bei Aufmerksamkeitsdefizit-Hyperaktivitätsstörung in Duisburg
-            </p>
           </FadeIn>
         </div>
-      </section>
-      {/* Beschreibung */}
-      <section className="py-20 md:py-28 pt-[0px] pb-[0px]">
         <div className="container mx-auto px-4 md:px-8 pt-[50px] pb-[50px]">
           <div className="max-w-3xl mx-auto">
             <FadeIn>
@@ -59,6 +50,7 @@ export default function Adhs() {
           </div>
         </div>
       </section>
+     
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
