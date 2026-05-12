@@ -20,7 +20,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/55 text-sm leading-relaxed">
-              Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
+              Privatärztliche Praxis für Gesundheit  
             </p>
           </div>
 
