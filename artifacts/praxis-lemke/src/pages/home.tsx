@@ -51,7 +51,7 @@ export default function Home() {
 
             <FadeIn delay={0.1}>
               <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
-                Privatärztliche Praxis für Psychiatrie & Psychotherapie
+                Privatärztliche Praxis für Gesundheit
               </p>
             </FadeIn>
 
@@ -63,7 +63,7 @@ export default function Home() {
 
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-                <a href="https://www.doctolib.de" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
                   Termin bei Doctolib buchen
                 </a>
               </Button>
@@ -233,12 +233,9 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-7">Kontakt</h3>
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-light rounded-full flex items-center justify-center text-primary shrink-0">
-                    <Phone size={20} />
-                  </div>
+            
                   <div>
-                    <p className="text-sm text-foreground/55 mb-1">Telefon</p>
-                    <p className="text-lg font-medium">0203 / 123 456 78</p>
+                
                   </div>
                 </div>
 
@@ -248,7 +245,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -279,23 +276,23 @@ export default function Home() {
                   <tbody className="divide-y divide-border">
                     <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                       <td className="py-4 font-medium">Montag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">14:00 – 19:00</td>
+                      <td className="pb-3 sm:py-4 text-foreground/65">11:00 – 18:00</td>
                     </tr>
                     <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                       <td className="py-4 font-medium">Dienstag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 13:00, 14:00 – 19:00</td>
+                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 13:00, 14:00 – 18:00</td>
                     </tr>
                     <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                       <td className="py-4 font-medium">Mittwoch</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 17:00<br />19:00 – 21:00</td>
+                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 18:00<br />19:00 – 21:00</td>
                     </tr>
                     <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                       <td className="py-4 font-medium">Donnerstag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 17:00<br />19:00 – 20:00</td>
+                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 18:00<br />19:00 – 21:00</td>
                     </tr>
                     <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b-0">
                       <td className="py-4 font-medium">Freitag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 15:00</td>
+                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 13:00</td>
                     </tr>
                   </tbody>
                 </table>
@@ -323,7 +320,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-semibold tracking-tight mb-3">Abrechnung</h2>
-            <p className="text-xl text-primary font-medium mb-5">Privat Versicherte & Selbstzahler</p>
+            <p className="text-xl text-primary font-medium mb-5">Privat Versicherte & Selbstzahlende</p>
             <p className="text-foreground/70 leading-relaxed">
               Die Abrechnung erfolgt transparent nach der Gebührenordnung für Ärzte (GOÄ).
               Gesetzlich Versicherte können als Selbstzahler behandelt werden.
@@ -332,41 +329,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9. Formulare & Downloads */}
-      <section className="py-20 bg-background border-t border-border">
-        <div className="container mx-auto px-4 md:px-8">
-          <FadeIn className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-semibold tracking-tight mb-3 text-center">Formulare & Downloads</h2>
-            <p className="text-foreground/60 text-center mb-10">
-              Bitte laden Sie die folgenden Dokumente vor Ihrem ersten Termin herunter.
-            </p>
-            <div className="space-y-3">
-              {[
-                { label: "Anamnesebogen", desc: "Bitte ausgefüllt zum Erstgespräch mitbringen." },
-                { label: "Behandlungsvertrag", desc: "Grundlage unserer gemeinsamen Arbeit." },
-                { label: "Datenschutzerklärung", desc: "Informationen zum Umgang mit Ihren Daten." },
-              ].map((doc) => (
-                <a
-                  key={doc.label}
-                  href="#"
-                  className="flex items-center justify-between gap-4 bg-white border border-border/70 rounded-xl px-6 py-5 hover:shadow-md hover:border-primary/30 transition-all duration-200 group"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-light rounded-lg flex items-center justify-center text-primary shrink-0">
-                      <FileDown size={20} />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground group-hover:text-primary transition-colors">{doc.label}</p>
-                      <p className="text-sm text-foreground/55">{doc.desc}</p>
-                    </div>
-                  </div>
-                  <span className="text-xs text-foreground/40 group-hover:text-primary transition-colors font-medium uppercase tracking-wide">PDF</span>
-                </a>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+     
     </>
   );
 }

@@ -7,8 +7,8 @@ const PASSWORD = "praxis2024";
 
 const digitalForms = [
   {
-    label: "Online-Anamnese",
-    desc: "Füllen Sie den Anamnesebogen bequem vor Ihrem ersten Termin online aus.",
+    label: "Datenschutzerklärung",
+    desc: "Füllen Sie die Datenschutzerklärung bequem vor Ihrem ersten Termin online aus.",
     url: "https://app.patientify.io/de/anamnese/start/a68b697e78a80bb1b7ce9cdbc8ca3b07",
     icon: <ClipboardList size={24} />,
     color: "bg-primary/10 text-primary",
@@ -26,12 +26,12 @@ const pdfDownloads = [
   {
     label: "Behandlungsvertrag",
     desc: "Grundlage unserer gemeinsamen therapeutischen Arbeit.",
-    filename: "Behandlungsvertrag_Stellplatzpraxis.pdf",
+    filename: "behandlungsvertrag.pdf",
   },
   {
     label: "Einwilligungserklärung E-Mail-Kommunikation",
     desc: "Erlaubnis zur sicheren Kommunikation per E-Mail.",
-    filename: "Einwilligung_Email_Stellplatzpraxis.pdf",
+    filename: "einverständniserklärung.pdf.pdf",
   },
 ];
 
@@ -209,8 +209,8 @@ export default function Downloads() {
                     </div>
                   </div>
                   <a
-                    href="#"
-                    onClick={(e) => e.preventDefault()}
+                    href={`/downloads/${doc.filename}`}
+                    download
                     className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium bg-light text-secondary px-3 py-1.5 rounded-lg hover:bg-secondary/10 transition-colors"
                   >
                     <FileDown size={14} />
@@ -264,8 +264,8 @@ export default function Downloads() {
                         </div>
                       </div>
                       <a
-                        href="#"
-                        onClick={(e) => e.preventDefault()}
+                        href={`/protected/${doc.filename}`}
+                        download
                         className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium bg-light text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors"
                       >
                         <FileDown size={14} />

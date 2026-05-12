@@ -19,9 +19,7 @@ export default function Footer() {
                 style={{ mixBlendMode: "screen" }}
               />
             </Link>
-            <p className="text-white/55 text-sm leading-relaxed">
-              Privatpraxis für Psychiatrie und Psychotherapie in Duisburg.
-            </p>
+            <p className="text-white/55 text-sm leading-relaxed">Privatärztliche Praxis für Gesundheit.</p>
           </div>
 
           <div>
@@ -50,9 +48,7 @@ export default function Footer() {
               <li><a href="#" className="hover:text-white transition-colors">Datenschutz</a></li>
               <li><Link to="/downloads" className="hover:text-white transition-colors">Downloads</Link></li>
             </ul>
-            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 text-sm">
-              <a href={anchorHref("kontakt")}>Termin vereinbaren</a>
-            </Button>
+            
           </div>
         </div>
 

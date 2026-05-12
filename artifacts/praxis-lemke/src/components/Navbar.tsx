@@ -134,11 +134,10 @@ export default function Navbar() {
           >
             Downloads
           </Link>
-          <Button
-            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, "kontakt")}
-            className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-12 text-base"
-          >
-            Termin buchen
+          <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
+            <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
+              Termin bei Doctolib buchen
+            </a>
           </Button>
         </div>
 

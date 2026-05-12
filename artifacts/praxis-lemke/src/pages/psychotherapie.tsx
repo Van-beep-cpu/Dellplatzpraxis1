@@ -23,7 +23,7 @@ export default function Psychotherapie() {
               Professionelle Begleitung bei psychischen Erkrankungen und Lebenskrisen in Duisburg
             </p>
             <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-              <a href="https://www.doctolib.de" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
                 Termin bei Doctolib buchen
               </a>
             </Button>
