@@ -62,12 +62,10 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
-              <Button
-                size="lg"
-                onClick={() => scrollTo("kontakt")}
-                className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 h-14 text-base font-medium"
-              >
-                Termin buchen
+              <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
+                <a href="https://www.doctolib.de" target="_blank" rel="noopener noreferrer">
+                  Termin bei Doctolib buchen
+                </a>
               </Button>
             </FadeIn>
           </div>
@@ -157,50 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Videosprechstunde */}
-      <section className="py-24 md:py-36 bg-secondary text-white overflow-hidden">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <FadeIn>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Behandlung von zuhause</h2>
-              <p className="text-lg text-white/75 mb-10 leading-relaxed">
-                Wir bieten Ihnen die Möglichkeit, Termine bequem per Videosprechstunde wahrzunehmen – sicher, diskret und ohne Anfahrtsweg.
-              </p>
-
-              <ul className="space-y-5 mb-12">
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Clock size={20} className="text-white" /></div>
-                  Schnellere Termine
-                </li>
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><MapPin size={20} className="text-white" /></div>
-                  Ortsunabhängig
-                </li>
-                <li className="flex items-center gap-4 text-base">
-                  <div className="bg-white/10 p-2.5 rounded-full shrink-0"><Video size={20} className="text-white" /></div>
-                  Sichere Kommunikation
-                </li>
-              </ul>
-
-              <Button
-                size="lg"
-                onClick={() => scrollTo("kontakt")}
-                className="bg-white text-secondary hover:bg-white/90 rounded-full px-8 h-12 text-base font-semibold"
-              >
-                Termin online buchen
-              </Button>
-            </FadeIn>
-
-            <FadeIn delay={0.2} className="relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden relative shadow-2xl">
-                <img src={videoConsult} alt="Videosprechstunde" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl"></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
+     
       {/* 5. Ablauf */}
       <section className="py-24 md:py-36">
         <div className="container mx-auto px-4 md:px-8">

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoSrc from "@assets/logo.png";
@@ -20,6 +20,7 @@ export default function Navbar() {
   const [isLeistungenOpen, setIsLeistungenOpen] = React.useState(false);
   const [isMobileLeistungenOpen, setIsMobileLeistungenOpen] = React.useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === "/" || location.pathname === "";
   const dropdownRef = React.useRef<HTMLDivElement>(null);
 
@@ -44,16 +45,16 @@ export default function Navbar() {
     setIsLeistungenOpen(false);
   }, [location.pathname]);
 
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, anchor: string) => {
+  const handleAnchorClick = (e: React.MouseEvent, anchor: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    setIsLeistungenOpen(false);
+
     if (isHome) {
       const el = document.getElementById(anchor);
-      if (el) {
-        e.preventDefault();
-        setIsMobileMenuOpen(false);
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
-      setIsMobileMenuOpen(false);
+      navigate({ pathname: "/", hash: `#${anchor}` });
     }
   };
 
@@ -93,7 +94,7 @@ export default function Navbar() {
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-border/60 py-2 z-50">
                 <a
                   href={anchorHref("leistungen")}
-                  onClick={(e) => { handleAnchorClick(e, "leistungen"); setIsLeistungenOpen(false); }}
+                  onClick={(e) => handleAnchorClick(e, "leistungen")}
                   className="block px-4 py-2.5 text-sm text-foreground/75 hover:text-primary hover:bg-light transition-colors"
                 >
                   Alle Leistungen
@@ -133,10 +134,11 @@ export default function Navbar() {
           >
             Downloads
           </Link>
-          <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-12 text-base">
-            <a href={anchorHref("kontakt")} onClick={(e) => handleAnchorClick(e, "kontakt")}>
-              Termin buchen
-            </a>
+          <Button
+            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, "kontakt")}
+            className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 h-12 text-base"
+          >
+            Termin buchen
           </Button>
         </div>
 
@@ -198,10 +200,11 @@ export default function Navbar() {
           <Link to="/downloads" className="py-2 text-base font-medium text-foreground/75">
             Downloads
           </Link>
-          <Button asChild className="bg-primary text-white w-full rounded-full h-12 text-base mt-2">
-            <a href={anchorHref("kontakt")} onClick={(e) => handleAnchorClick(e, "kontakt")}>
-              Termin buchen
-            </a>
+          <Button
+            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, "kontakt")}
+            className="bg-primary text-white w-full rounded-full h-12 text-base mt-2"
+          >
+            Termin buchen
           </Button>
         </div>
       )}
