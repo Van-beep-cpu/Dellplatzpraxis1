@@ -19,14 +19,9 @@ export default function Adhs() {
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
               ADHS im Erwachsenenalter
             </h1>
-            <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed font-light mb-8">
+            <p className="text-xl text-foreground/65 max-w-2xl leading-relaxed font-light">
               Diagnose, Behandlung und Begleitung bei Aufmerksamkeitsdefizit-Hyperaktivitätsstörung in Duisburg
             </p>
-            <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-              <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
-                Termin bei Doctolib buchen
-              </a>
-            </Button>
           </FadeIn>
         </div>
       </section>
