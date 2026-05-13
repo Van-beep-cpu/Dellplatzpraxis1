@@ -23,7 +23,7 @@ export default function Psychotherapie() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
             <FadeIn>
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-6">Psychotherapie in der Stellplatzpraxis</h2>
+              
               <p className="text-lg text-foreground/75 leading-loose mb-5">
                 Psychotherapie bietet einen geschützten Raum, in dem Sie über belastende Gedanken, Gefühle und Verhaltensmuster sprechen können. In meiner privatärztlichen Praxis kombiniere ich evidenzbasierte Therapieansätze mit einem wertschätzenden, individuellen Blick auf Ihre Situation.
               </p>

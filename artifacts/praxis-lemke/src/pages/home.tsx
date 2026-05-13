@@ -31,7 +31,7 @@ export default function Home() {
       {/* 1. Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-70" />
+          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-80" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background"></div>
         </div>
 
