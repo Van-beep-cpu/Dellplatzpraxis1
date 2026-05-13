@@ -13,7 +13,7 @@ export default function Schmerztherapie() {
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn>
             
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground leading-tight max-w-3xl mb-[75px]">
                 Schmerztherapie
             </h1>
            
@@ -51,8 +51,6 @@ export default function Schmerztherapie() {
           </div>
         </div>
       </section>
-
-  
       {/* CTA */}
       <section className="py-20 bg-accent text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
