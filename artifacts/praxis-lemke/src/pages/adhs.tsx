@@ -50,9 +50,8 @@ export default function Adhs() {
           </div>
         </div>
       </section>
-     
       {/* CTA */}
-      <section className="py-20 bg-accent text-white text-center">
+      <section className="py-20 bg-accent text-white text-center pt-[30px] pb-[30px]">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Jetzt Termin vereinbaren</h2>
