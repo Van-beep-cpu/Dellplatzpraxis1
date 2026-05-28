@@ -46,13 +46,13 @@ export default function Home() {
 
             <FadeIn delay={0.1}>
               <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
-                Privatärztliche Praxis für Psychiatrie & Psychotherapie
+                Privatärztliche Praxis für Gesundheit
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
               <p className="text-base md:text-lg text-foreground/55 mb-14 max-w-xl leading-relaxed">
-                Begleitung bei psychischen Belastungen – persönlich vor Ort in Duisburg oder per Videosprechstunde.
+                Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
               </p>
             </FadeIn>
 
@@ -310,7 +310,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/50 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">info@dellplatzpraxis.de</p>
                   </div>
                 </div>
 
@@ -342,8 +342,8 @@ export default function Home() {
                     {[
                       { day: "Montag", hours: "11:00 – 18:00" },
                       { day: "Dienstag", hours: "10:00 – 13:00, 14:00 – 18:00" },
-                      { day: "Mittwoch", hours: "10:00 – 13:00, 14:00 – 21:00" },
-                      { day: "Donnerstag", hours: "10:00 – 13:00, 14:00 – 21:00" },
+                      { day: "Mittwoch", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
+                      { day: "Donnerstag", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
                       { day: "Freitag", hours: "10:00 – 13:00" },
                     ].map(({ day, hours }) => (
                       <tr key={day} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
@@ -380,7 +380,7 @@ export default function Home() {
             <p className="text-xl text-primary font-medium mb-5">Privat Versicherte & Selbstzahlende</p>
             <p className="text-foreground/65 leading-relaxed">
               Die Abrechnung erfolgt transparent nach der Gebührenordnung für Ärzte (GOÄ).
-              Gesetzlich Versicherte können als Selbstzahler behandelt werden.
+              Gesetzlich Versicherte können als Selbstzahlende behandelt werden.
             </p>
           </FadeIn>
         </div>
