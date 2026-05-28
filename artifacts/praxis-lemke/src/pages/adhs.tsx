@@ -27,10 +27,10 @@ export default function Adhs() {
       </section>
       {/* Inhalt */}
       <section className="py-20 md:py-28 text-left pt-[25px] pb-[25px] ml-[112px] mr-[112px]">
-        <div className="container mx-auto px-4 md:px-8 pl-[32px] pr-[32px] ml-[0px] mr-[0px] pt-[0px] pb-[0px] mt-[50px] mb-[50px]">
+        <div className="container mx-auto px-4 md:px-8 pl-[32px] pr-[32px] ml-[0px] mr-[0px] pt-[0px] pb-[0px] mt-[5px] mb-[5px]">
           <div className="max-w-3xl mx-auto ml-[0px] mr-[0px]">
             <FadeIn>
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-7">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-[28px] mt-[0px]">
                 Was ist ADHS im Erwachsenenalter?
               </h2>
               <p className="text-lg text-foreground/70 leading-loose mb-5">
