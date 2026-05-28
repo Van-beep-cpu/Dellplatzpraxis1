@@ -117,11 +117,11 @@ export default function Downloads() {
   const [unlocked, setUnlocked] = React.useState(false);
 
   return (
-    <div className="min-h-screen pt-28 pb-24">
+    <div className="min-h-screen pt-32 pb-20 md:pt-44 md:pb-28">
       {/* Page Header */}
-      <div className="container mx-auto px-4 md:px-8 mb-16">
+      <div className="container mx-auto px-4 md:px-8 mb-14">
         <FadeIn className="text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-5">
+          <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-5">
             <FileDown size={15} />
             Patientenbereich
           </div>
@@ -135,7 +135,7 @@ export default function Downloads() {
       </div>
 
       {/* ── Section 1: Digitale Formulare ── */}
-      <section className="bg-light border-y border-border py-16 mb-14">
+      <section className="bg-light border-y border-border py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-10">
             <div className="flex items-center gap-3 mb-1">
@@ -179,7 +179,7 @@ export default function Downloads() {
       </section>
 
       {/* ── Section 2: PDF Downloads ── */}
-      <section className="py-4 mb-14">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-8">
             <div className="flex items-center gap-3 mb-1">
@@ -224,7 +224,7 @@ export default function Downloads() {
       </section>
 
       {/* ── Section 3: Geschützter Patientenbereich ── */}
-      <section className="py-12">
+      <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-8">
             <div className="flex items-center gap-3 mb-1">

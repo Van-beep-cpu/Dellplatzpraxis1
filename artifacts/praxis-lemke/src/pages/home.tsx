@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
 
-import heroBg from "@/assets/images/pexels-pnw-prod-8251481.jpg";
+import heroBg from "@/assets/images/hero-therapy.webp";
 import drLemke from "@/assets/images/foto.png";
 
 export default function Home() {
@@ -88,7 +88,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <FadeIn>
-              <HeartHandshake className="w-11 h-11 text-primary mx-auto mb-8" />
+              <HeartHandshake className="w-11 h-11 text-warm-accent mx-auto mb-8" />
               <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight">
                 Ganzheitliche Behandlung im Mittelpunkt
               </h2>
@@ -222,11 +222,11 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
-                  <CheckCircle2 size={18} className="text-primary shrink-0" />
+                  <CheckCircle2 size={18} className="text-warm-accent shrink-0" />
                   <span className="font-medium text-foreground/80">Deutsch & Englisch</span>
                 </div>
                 <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
-                  <CheckCircle2 size={18} className="text-primary shrink-0" />
+                  <CheckCircle2 size={18} className="text-warm-accent shrink-0" />
                   <span className="font-medium text-foreground/80">Mitglied DGPPN</span>
                 </div>
               </div>

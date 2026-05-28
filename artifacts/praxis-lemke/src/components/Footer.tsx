@@ -7,9 +7,9 @@ const anchorHref = (id: string) => `${basePath}/#${id}`;
 
 export default function Footer() {
   return (
-    <footer className="bg-accent text-white/80 py-16 pt-[40px] pb-[40px]">
+    <footer className="bg-accent text-white/80 py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
             <Link to="/">
               <img
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 text-center text-sm text-white/40">
+        <div className="pt-8 border-t border-warm-accent/30 text-center text-sm text-white/40">
           © Dellplatzpraxis Lemke. Alle Rechte vorbehalten.
         </div>
       </div>

@@ -6,13 +6,13 @@ export default function Psychotherapie() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
+      <section className="pt-32 pb-20 md:pt-44 md:pb-28 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-accent/6 blur-3xl"></div>
         </div>
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-7">
+            <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-7">
               <HeartHandshake size={15} />
               Therapieangebot
             </div>
@@ -27,7 +27,7 @@ export default function Psychotherapie() {
       </section>
 
       {/* Inhalt */}
-      <section className="py-24 md:py-32">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
             <FadeIn>
@@ -54,7 +54,7 @@ export default function Psychotherapie() {
                   "Zwangsstörungen",
                 ].map((s) => (
                   <div key={s} className="flex items-center gap-3 bg-warm px-4 py-3 rounded-xl text-foreground/75">
-                    <CheckCircle2 size={16} className="text-primary/70 shrink-0" />
+                    <CheckCircle2 size={16} className="text-warm-accent shrink-0" />
                     {s}
                   </div>
                 ))}
@@ -65,7 +65,7 @@ export default function Psychotherapie() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-accent text-white text-center">
+      <section className="py-20 md:py-28 bg-accent text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Jetzt Termin vereinbaren</h2>
