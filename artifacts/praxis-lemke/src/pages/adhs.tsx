@@ -27,7 +27,7 @@ export default function Adhs() {
       </section>
       {/* Inhalt */}
       <section className="py-20 md:py-28 text-left pt-[25px] pb-[25px] ml-[112px] mr-[112px]">
-        <div className="container mx-auto px-4 md:px-8 pl-[32px] pr-[32px] ml-[0px] mr-[0px] pt-[0px] pb-[0px] mt-[40px] mb-[40px]">
+        <div className="container mx-auto px-4 md:px-8 pl-[32px] pr-[32px] ml-[0px] mr-[0px] pt-[0px] pb-[0px] mt-[50px] mb-[50px]">
           <div className="max-w-3xl mx-auto ml-[0px] mr-[0px]">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-7">
@@ -63,7 +63,7 @@ export default function Adhs() {
         </div>
       </section>
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-accent text-white text-center">
+      <section className="py-20 md:py-28 bg-accent text-white text-center pt-[100px] pb-[100px]">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Jetzt Termin vereinbaren</h2>
