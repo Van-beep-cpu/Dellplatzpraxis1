@@ -3,21 +3,16 @@ import {
   Brain,
   Stethoscope,
   Users,
-  Video,
   HeartHandshake,
-  Clock,
   MapPin,
-  Phone,
   Mail,
   CheckCircle2,
-  FileDown,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
 
-import logoSrc from "@assets/logo.png";
-import heroBg from "@/assets/images/hero-bg1.jpg";
-import videoConsult from "@/assets/images/videofoto.jpg";
+import heroBg from "@/assets/images/pexels-pnw-prod-8251481.jpg";
 import drLemke from "@/assets/images/foto.png";
 
 export default function Home() {
@@ -31,14 +26,14 @@ export default function Home() {
       {/* 1. Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-80" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background"></div>
+          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/65 to-background"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 py-20">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 py-24">
           <div className="max-w-3xl">
             <FadeIn>
-              <p className="text-sm tracking-wide text-foreground/50 mb-5 uppercase">
+              <p className="text-sm tracking-widest text-foreground/45 mb-6 uppercase font-medium">
                 Willkommen in der Stellplatzpraxis
               </p>
             </FadeIn>
@@ -51,21 +46,37 @@ export default function Home() {
 
             <FadeIn delay={0.1}>
               <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
-                Privatärztliche Praxis für Gesundheit
+                Privatärztliche Praxis für Psychiatrie & Psychotherapie
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="text-base md:text-lg text-foreground/60 mb-12 max-w-xl leading-relaxed">
-                Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
+              <p className="text-base md:text-lg text-foreground/55 mb-14 max-w-xl leading-relaxed">
+                Begleitung bei psychischen Belastungen – persönlich vor Ort in Duisburg oder per Videosprechstunde.
               </p>
             </FadeIn>
 
             <FadeIn delay={0.2} className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-                <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md"
+              >
+                <a
+                  href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Termin bei Doctolib buchen
                 </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollTo("leistungen")}
+                className="rounded-full px-10 h-14 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm"
+              >
+                Leistungen entdecken
               </Button>
             </FadeIn>
           </div>
@@ -73,21 +84,21 @@ export default function Home() {
       </section>
 
       {/* 2. Praxisphilosophie */}
-      <section className="py-24 md:py-36 bg-light">
+      <section className="py-28 md:py-40 bg-warm">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <FadeIn>
-              <HeartHandshake className="w-11 h-11 text-primary mx-auto mb-7" />
+              <HeartHandshake className="w-11 h-11 text-primary mx-auto mb-8" />
               <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight">
                 Ganzheitliche Behandlung im Mittelpunkt
               </h2>
-              <p className="text-lg text-foreground/75 leading-loose mb-5">
+              <p className="text-lg text-foreground/70 leading-loose mb-5">
                 In meiner Praxis in Duisburg begleite ich Sie bei psychischen und psychosomatischen Beschwerden mit einem ganzheitlichen Ansatz. Dabei betrachte ich nicht nur einzelne Symptome, sondern beziehe auch psychologische und soziale Aspekte in die Behandlung mit ein.
               </p>
-              <p className="text-lg text-foreground/75 leading-loose mb-5">
+              <p className="text-lg text-foreground/70 leading-loose mb-5">
                 Gemeinsam schauen wir, welcher Therapie- oder Behandlungsansatz für Ihre persönliche Situation am sinnvollsten ist. Falls erforderlich, kann die Behandlung auch medikamentös unterstützt werden, stets in enger Abstimmung mit Ihnen.
               </p>
-              <p className="text-lg text-foreground/75 leading-loose">
+              <p className="text-lg text-foreground/70 leading-loose">
                 Ein besonderer Schwerpunkt liegt unter anderem in der Behandlung von Depressionen, Suchterkrankungen sowie chronischen Schmerzsymptomen. Ich freue mich darauf, Sie kennenzulernen.
               </p>
             </FadeIn>
@@ -96,12 +107,12 @@ export default function Home() {
       </section>
 
       {/* 3. Leistungen */}
-      <section id="leistungen" className="py-24 md:py-36">
+      <section id="leistungen" className="py-28 md:py-40">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Unsere Leistungen</h2>
-              <p className="text-lg text-foreground/65 max-w-2xl mx-auto">
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Umfassende diagnostische und therapeutische Angebote für Ihre seelische Gesundheit.
               </p>
             </div>
@@ -109,45 +120,49 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-6">
             <FadeIn delay={0.1}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-border/60 h-full hover:shadow-lg transition-all duration-300">
-                <div className="w-13 h-13 bg-light rounded-xl flex items-center justify-center mb-6 text-primary">
-                  <Brain size={26} />
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-border/40 h-full hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <div className="w-12 h-12 bg-light rounded-2xl flex items-center justify-center mb-6 text-primary">
+                  <Brain size={22} />
                 </div>
                 <h3 className="text-xl font-semibold mb-5">Behandlungsfelder</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Depressionen</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Angststörungen</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Lebenskrisen</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Burnout</li>
+                  {["Depressionen", "Angststörungen", "Lebenskrisen", "Burnout"].map((s) => (
+                    <li key={s} className="flex items-center gap-3 text-foreground/70">
+                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-border/60 h-full hover:shadow-lg transition-all duration-300">
-                <div className="w-13 h-13 bg-light rounded-xl flex items-center justify-center mb-6 text-primary">
-                  <Stethoscope size={26} />
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-border/40 h-full hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <div className="w-12 h-12 bg-light rounded-2xl flex items-center justify-center mb-6 text-primary">
+                  <Stethoscope size={22} />
                 </div>
                 <h3 className="text-xl font-semibold mb-5">Spezialisierungen</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> ADHS im Erwachsenenalter</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Autismus-Spektrum</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Suchterkrankungen</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Chronische Schmerzen</li>
+                  {["ADHS im Erwachsenenalter", "Autismus-Spektrum", "Suchterkrankungen", "Chronische Schmerzen"].map((s) => (
+                    <li key={s} className="flex items-center gap-3 text-foreground/70">
+                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-border/60 h-full hover:shadow-lg transition-all duration-300">
-                <div className="w-13 h-13 bg-light rounded-xl flex items-center justify-center mb-6 text-primary">
-                  <Users size={26} />
+              <div className="bg-white p-8 rounded-3xl shadow-sm border border-border/40 h-full hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+                <div className="w-12 h-12 bg-light rounded-2xl flex items-center justify-center mb-6 text-primary">
+                  <Users size={22} />
                 </div>
                 <h3 className="text-xl font-semibold mb-5">Therapieformen</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Psychotherapie</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Schmerztherapie</li>
-                  <li className="flex items-center gap-3 text-foreground/75"><CheckCircle2 size={17} className="text-primary/70 shrink-0" /> Online-Therapie</li>
+                  {["Psychotherapie", "Schmerztherapie", "Online-Therapie"].map((s) => (
+                    <li key={s} className="flex items-center gap-3 text-foreground/70">
+                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </FadeIn>
@@ -155,14 +170,13 @@ export default function Home() {
         </div>
       </section>
 
-     
-      {/* 5. Ablauf */}
-      <section className="py-24 md:py-36">
+      {/* 4. Ablauf */}
+      <section className="py-28 md:py-40 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Der Weg zu uns</h2>
-              <p className="text-lg text-foreground/65 max-w-2xl mx-auto">
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Ein transparenter und strukturierter Ablauf für Ihre bestmögliche Versorgung.
               </p>
             </div>
@@ -178,11 +192,11 @@ export default function Home() {
                 { step: "04", title: "Behandlung", desc: "Gemeinsame Entwicklung und Umsetzung Ihres individuellen Therapieplans." },
               ].map((item, i) => (
                 <FadeIn key={item.step} delay={i * 0.1} className="text-center md:text-left flex flex-col md:block items-center">
-                  <div className="w-24 h-24 bg-white border border-border rounded-full flex items-center justify-center text-2xl font-semibold text-primary mb-6 shadow-sm">
+                  <div className="w-24 h-24 bg-white border border-border/60 rounded-full flex items-center justify-center text-2xl font-semibold text-primary mb-6 shadow-sm">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                  <p className="text-foreground/65 text-center md:text-left leading-relaxed text-sm">{item.desc}</p>
+                  <p className="text-foreground/60 text-center md:text-left leading-relaxed text-sm">{item.desc}</p>
                 </FadeIn>
               ))}
             </div>
@@ -190,27 +204,85 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Über den Arzt */}
-      <section id="ueber-uns" className="py-24 md:py-36 bg-light">
+      {/* 5. Über den Arzt */}
+      <section id="ueber-uns" className="py-28 md:py-40">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <FadeIn>
               <div className="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-lg">
-                <img src={drLemke} alt="Herr Kalle Lemke" className="w-full h-full object-cover" />
+                <img src={drLemke} alt="Kalle Lemke" className="w-full h-full object-cover" />
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-7">Herr Kalle Lemke</h2>
-              <p className="text-lg text-foreground/75 mb-8 leading-loose">
-                Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten. Eine sorgfältige Diagnostik und eine auf Ihre Bedürfnisse abgestimmte Therapieplanung bilden die Grundlage unserer gemeinsamen Arbeit.
+              <p className="text-sm tracking-widest text-primary/70 uppercase font-medium mb-4">Über mich</p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-7">Kalle Lemke</h2>
+              <p className="text-lg text-foreground/70 mb-8 leading-loose">
+                Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten.
               </p>
-              <div className="bg-white p-6 rounded-2xl shadow-sm inline-block">
-                <p className="font-medium text-foreground mb-3 flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-primary" /> Deutsch & Englisch
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
+                  <CheckCircle2 size={18} className="text-primary shrink-0" />
+                  <span className="font-medium text-foreground/80">Deutsch & Englisch</span>
+                </div>
+                <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
+                  <CheckCircle2 size={18} className="text-primary shrink-0" />
+                  <span className="font-medium text-foreground/80">Mitglied DGPPN</span>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Team */}
+      <section className="py-28 md:py-40 bg-warm">
+        <div className="container mx-auto px-4 md:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Unser Team</h2>
+              <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+                Wir begleiten Sie mit Einfühlungsvermögen, Fachkompetenz und persönlichem Engagement.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <FadeIn delay={0.1}>
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-border/30 text-center hover:shadow-md transition-all duration-300">
+                <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-5 ring-4 ring-light shadow-sm">
+                  <img src={drLemke} alt="Kalle Lemke" className="w-full h-full object-cover object-top" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Kalle Lemke</h3>
+                <p className="text-primary text-sm font-medium mb-3">Arzt & Psychotherapeuth</p>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Psychiater und Psychotherapeuth mit langjähriger Erfahrung. Spezialisiert auf ADHS, ASS und psychosomatische Erkrankungen.
                 </p>
-                <p className="font-medium text-foreground flex items-center gap-2">
-                  <CheckCircle2 size={18} className="text-primary" /> Mitglied DGPPN
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-border/30 text-center hover:shadow-md transition-all duration-300">
+                <div className="w-24 h-24 rounded-full bg-light flex items-center justify-center mx-auto mb-5 ring-4 ring-light shadow-sm">
+                  <User size={36} className="text-primary/35" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Praxiskoordination</h3>
+                <p className="text-primary text-sm font-medium mb-3">Verwaltung & Terminmanagement</p>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Erste Anlaufstelle für Ihre Anfragen, Terminvereinbarungen und organisatorische Anliegen.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.3}>
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-border/30 text-center hover:shadow-md transition-all duration-300">
+                <div className="w-24 h-24 rounded-full bg-light flex items-center justify-center mx-auto mb-5 ring-4 ring-light shadow-sm">
+                  <User size={36} className="text-primary/35" />
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Therapeutische Assistenz</h3>
+                <p className="text-primary text-sm font-medium mb-3">Diagnostik & Patientenbegleitung</p>
+                <p className="text-foreground/60 text-sm leading-relaxed">
+                  Unterstützung bei diagnostischen Verfahren und der Begleitung von Patientinnen und Patienten.
                 </p>
               </div>
             </FadeIn>
@@ -219,50 +291,43 @@ export default function Home() {
       </section>
 
       {/* 7. Kontakt & Öffnungszeiten */}
-      <section id="kontakt" className="py-24 md:py-36 bg-background border-t border-border">
+      <section id="kontakt" className="py-28 md:py-40 bg-background border-t border-border/40">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Kontakt & Standort</h2>
-              <p className="text-foreground/60">Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze vorhanden</p>
+              <p className="text-foreground/55">Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze vorhanden</p>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-12">
             <FadeIn>
               <h3 className="text-xl font-semibold mb-7">Kontakt</h3>
-              <div className="space-y-6 mb-8">
+              <div className="space-y-5 mb-8">
                 <div className="flex items-start gap-4">
-            
-                  <div>
-                
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-light rounded-full flex items-center justify-center text-primary shrink-0">
+                  <div className="w-11 h-11 bg-warm rounded-full flex items-center justify-center text-primary shrink-0">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/55 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">kontakt@dellplatzpraxis.de</p>
+                    <p className="text-sm text-foreground/50 mb-1">E-Mail</p>
+                    <p className="text-lg font-medium">kontakt@stellplatzpraxis.de</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-light rounded-full flex items-center justify-center text-primary shrink-0">
+                  <div className="w-11 h-11 bg-warm rounded-full flex items-center justify-center text-primary shrink-0">
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/55 mb-1">Adresse</p>
+                    <p className="text-sm text-foreground/50 mb-1">Adresse</p>
                     <p className="text-lg font-medium">Grünstraße 17, 47051 Duisburg</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-5 bg-accent/5 rounded-2xl border border-accent/10">
+              <div className="p-5 bg-warm rounded-2xl border border-border/30">
                 <p className="font-medium text-accent mb-2">Wichtige Hinweise:</p>
-                <ul className="space-y-2 text-foreground/75 text-sm">
+                <ul className="space-y-2 text-foreground/70 text-sm">
                   <li>• Hausbesuche nach Vereinbarung möglich</li>
                   <li>• Im Notfall wählen Sie bitte die <strong>116117</strong></li>
                 </ul>
@@ -271,36 +336,28 @@ export default function Home() {
 
             <FadeIn delay={0.2}>
               <h3 className="text-xl font-semibold mb-7">Öffnungszeiten</h3>
-              <div className="bg-white p-7 rounded-2xl shadow-sm border border-border">
+              <div className="bg-white p-7 rounded-2xl shadow-sm border border-border/40">
                 <table className="w-full">
-                  <tbody className="divide-y divide-border">
-                    <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                      <td className="py-4 font-medium">Montag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">11:00 – 18:00</td>
-                    </tr>
-                    <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                      <td className="py-4 font-medium">Dienstag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 13:00, 14:00 – 18:00</td>
-                    </tr>
-                    <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                      <td className="py-4 font-medium">Mittwoch</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 18:00<br />19:00 – 21:00</td>
-                    </tr>
-                    <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                      <td className="py-4 font-medium">Donnerstag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65 sm:text-right">10:00 – 13:00, 14:00 – 18:00<br />19:00 – 21:00</td>
-                    </tr>
-                    <tr className="flex flex-col sm:flex-row sm:justify-between sm:items-center border-b-0">
-                      <td className="py-4 font-medium">Freitag</td>
-                      <td className="pb-3 sm:py-4 text-foreground/65">10:00 – 13:00</td>
-                    </tr>
+                  <tbody className="divide-y divide-border/40">
+                    {[
+                      { day: "Montag", hours: "11:00 – 18:00" },
+                      { day: "Dienstag", hours: "10:00 – 13:00, 14:00 – 18:00" },
+                      { day: "Mittwoch", hours: "10:00 – 13:00, 14:00 – 21:00" },
+                      { day: "Donnerstag", hours: "10:00 – 13:00, 14:00 – 21:00" },
+                      { day: "Freitag", hours: "10:00 – 13:00" },
+                    ].map(({ day, hours }) => (
+                      <tr key={day} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                        <td className="py-3.5 font-medium">{day}</td>
+                        <td className="pb-3 sm:py-3.5 text-foreground/60 sm:text-right">{hours}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </div>
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[380px] md:h-[450px] rounded-2xl overflow-hidden shadow-sm border border-border">
+          <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[380px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9972370724036!2d6.7640248!3d51.4287841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf67b822d8e7%3A0x63ce9a75d5e2197f!2sGr%C3%BCnstra%C3%9Fe%2017%2C%2047051%20Duisburg%2C%20Germany!5e0!3m2!1sen!2sus!4v1709230588147!5m2!1sen!2sus"
               width="100%"
@@ -316,20 +373,18 @@ export default function Home() {
       </section>
 
       {/* 8. Abrechnung */}
-      <section className="py-20 bg-light border-t border-border">
+      <section className="py-20 md:py-24 bg-warm border-t border-border/30">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-semibold tracking-tight mb-3">Abrechnung</h2>
             <p className="text-xl text-primary font-medium mb-5">Privat Versicherte & Selbstzahlende</p>
-            <p className="text-foreground/70 leading-relaxed">
+            <p className="text-foreground/65 leading-relaxed">
               Die Abrechnung erfolgt transparent nach der Gebührenordnung für Ärzte (GOÄ).
               Gesetzlich Versicherte können als Selbstzahler behandelt werden.
             </p>
           </FadeIn>
         </div>
       </section>
-
-     
     </>
   );
 }

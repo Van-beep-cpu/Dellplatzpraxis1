@@ -40,6 +40,7 @@
   --color-destructive-border: hsl(var(--destructive-border));
 
   --color-light: hsl(var(--light));
+  --color-warm: hsl(var(--warm));
 
   --font-sans: var(--app-font-sans);
   --font-serif: var(--app-font-serif);
@@ -84,6 +85,7 @@
   --destructive-border: 0 84% 50%;
   
   --light: 137 30% 93%;
+  --warm: 38 45% 96%;
   
   --border: 144 25% 90%;
   --input: 144 25% 90%;
@@ -128,6 +130,7 @@
   --destructive-border: 0 62% 20%;
   
   --light: 137 50% 20%;
+  --warm: 38 30% 16%;
   
   --border: 215 28% 30%;
   --input: 215 28% 30%;
