@@ -34,7 +34,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <FadeIn>
               <p className="text-sm tracking-widest text-foreground/45 mb-6 uppercase font-medium">
-                Willkommen in der Stellplatzpraxis
+                Willkommen in der Dellplatzpraxis
               </p>
             </FadeIn>
 
