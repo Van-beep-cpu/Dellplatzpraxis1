@@ -6,7 +6,7 @@ export default function Adhs() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-44 md:pb-28 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
+        <section className="pt-32 pb-8 md:pt-44 md:pb-12 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-primary/8 blur-3xl"></div>
         </div>
@@ -25,13 +25,12 @@ export default function Adhs() {
           </FadeIn>
         </div>
       </section>
-
       {/* Inhalt */}
-      <section className="py-20 md:py-28">
+      <section className="pt-8 pb-20 md:pt-12 md:pb-28 text-left">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             <FadeIn>
-              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-7">
+              <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-[28px] mt-[0px]">
                 Was ist ADHS im Erwachsenenalter?
               </h2>
               <p className="text-lg text-foreground/70 leading-loose mb-5">
@@ -63,9 +62,8 @@ export default function Adhs() {
           </div>
         </div>
       </section>
-
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-accent text-white text-center">
+      <section className="py-20 md:py-28 bg-accent text-white text-center pt-[100px] pb-[100px]">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Jetzt Termin vereinbaren</h2>
