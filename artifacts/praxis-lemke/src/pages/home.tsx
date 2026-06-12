@@ -51,7 +51,7 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="text-base md:text-lg text-foreground/55 mb-14 max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg text-foreground/55 mb-8 max-w-xl leading-relaxed">
                 Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
               </p>
             </FadeIn>
