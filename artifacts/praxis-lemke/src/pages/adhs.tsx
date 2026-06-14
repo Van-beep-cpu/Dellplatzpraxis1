@@ -6,7 +6,7 @@ export default function Adhs() {
   return (
     <>
       {/* Hero */}
-        <section className="pt-32 pb-8 md:pt-44 md:pb-12 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
+        <section className="pt-28 pb-8 md:pt-36 md:pb-10 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-primary/8 blur-3xl"></div>
         </div>
