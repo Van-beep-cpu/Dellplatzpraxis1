@@ -120,22 +120,26 @@ export default function Downloads() {
     <div className="min-h-screen pt-32 pb-20 md:pt-44 md:pb-28">
       {/* Page Header */}
       <div className="container mx-auto px-4 md:px-8 mb-14">
-        <FadeIn className="text-center">
-          <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-5">
-            <FileDown size={15} />
-            Patientenbereich
-          </div>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
-            Formulare & Downloads
-          </h1>
-          <p className="text-foreground/60 max-w-xl mx-auto leading-relaxed">
-            Digitale Formulare, Dokumente zum Herunterladen und geschützte Inhalte für Ihre Behandlung.
-          </p>
-        </FadeIn>
-      </div>
+        <div className="max-w-4xl">
+          <FadeIn>
+            <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-5">
+              <FileDown size={15} />
+              Patientenbereich
+            </div>
 
+            <h1 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
+              Formulare & Downloads
+            </h1>
+
+            <p className="text-lg text-foreground/60 leading-relaxed max-w-2xl">
+              Digitale Formulare, Dokumente zum Herunterladen und geschützte Inhalte
+              für Ihre Behandlung.
+            </p>
+          </FadeIn>
+        </div>
+      </div>
       {/* ── Section 1: Digitale Formulare ── */}
-      <section className="bg-light border-y border-border py-16 md:py-20">
+      <section className="bg-light border-y border-border py-10 md:py-10">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-10">
             <div className="flex items-center gap-3 mb-1">
@@ -177,7 +181,6 @@ export default function Downloads() {
           </div>
         </div>
       </section>
-
       {/* ── Section 2: PDF Downloads ── */}
       <section className="py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-8">
@@ -196,7 +199,7 @@ export default function Downloads() {
           <div className="max-w-3xl space-y-3">
             {pdfDownloads.map((doc, i) => (
               <FadeIn key={doc.label} delay={i * 0.08}>
-                <div className="flex items-center justify-between gap-4 bg-white border border-border/70 rounded-2xl px-6 py-5 hover:shadow-md hover:border-secondary/30 transition-all duration-200 group">
+                <div className="flex items-center justify-between gap-4 bg-white border border-border/70 rounded-2xl px-6 py-6 hover:shadow-md hover:border-secondary/30 transition-all duration-200 group">
                   <div className="flex items-center gap-4">
                     <div className="w-11 h-11 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
                       <FileDown size={20} />
@@ -222,9 +225,8 @@ export default function Downloads() {
           </div>
         </div>
       </section>
-
       {/* ── Section 3: Geschützter Patientenbereich ── */}
-      <section className="py-16 md:py-20">
+      <section className="py-16 md:py-20 pt-[20px] pb-[20px]">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-8">
             <div className="flex items-center gap-3 mb-1">
