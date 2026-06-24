@@ -226,7 +226,7 @@ export default function Downloads() {
         </div>
       </section>
       {/* ── Section 3: Geschützter Patientenbereich ── */}
-      <section className="py-16 md:py-20 pt-[20px] pb-[20px]">
+      <section className="py-16 md:py-20 pt-[50px] pb-[50px]">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="mb-8">
             <div className="flex items-center gap-3 mb-1">
