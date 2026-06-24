@@ -10,8 +10,9 @@ export default function Ass() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-secondary/8 blur-3xl"></div>
         </div>
+
         <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             <FadeIn>
               <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-7">
                 <Users size={15} />
@@ -22,8 +23,9 @@ export default function Ass() {
                 Autismus-Spektrum-Störung (ASS)
               </h1>
 
-              <p className="text-xl text-foreground/60 leading-relaxed font-light">
-                Einfühlsame Diagnostik und individuelle Begleitung für Erwachsene im Autismus-Spektrum in Duisburg
+              <p className="text-xl text-foreground/60 leading-relaxed font-light max-w-2xl">
+                Einfühlsame Diagnostik und individuelle Begleitung für Erwachsene im
+                Autismus-Spektrum in Duisburg
               </p>
             </FadeIn>
           </div>
