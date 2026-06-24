@@ -25,11 +25,10 @@ export default function Schmerztherapie() {
           </FadeIn>
         </div>
       </section>
-
       {/* Inhalt */}
       <section className="pt-10 pb-20 md:pt-12 md:pb-28">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto ml-[0px] mr-[0px]">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-7">
                 Chronischer Schmerz – mehr als nur körperlich
@@ -63,7 +62,6 @@ export default function Schmerztherapie() {
           </div>
         </div>
       </section>
-
       {/* CTA */}
       <section className="py-20 md:py-28 bg-accent text-white text-center">
         <div className="container mx-auto px-4 md:px-8">
