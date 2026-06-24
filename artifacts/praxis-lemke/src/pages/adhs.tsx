@@ -6,28 +6,28 @@ export default function Adhs() {
   return (
     <>
       {/* Hero */}
-        <section className="pt-28 pb-8 md:pt-36 md:pb-10 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-primary/8 blur-3xl"></div>
-        </div>
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
-          <FadeIn>
-            <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-7">
-              <Brain size={15} />
-              Spezialisierung
-            </div>
-            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
-              ADHS im Erwachsenenalter
-            </h1>
-            <p className="text-xl text-foreground/60 max-w-2xl leading-relaxed font-light">
-              Diagnose, Behandlung und Begleitung bei Aufmerksamkeitsdefizit-Hyperaktivitätsstörung in Duisburg
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <section className="pt-28 pb-8 md:pt-36 md:pb-10 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-primary/8 blur-3xl"></div>
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <FadeIn>
+          <div className="inline-flex items-center gap-2 bg-warm-accent/15 text-warm-accent px-4 py-2 rounded-full text-sm font-medium mb-7">
+            <Brain size={15} />
+            Spezialisierung
+          </div>
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground mb-6 leading-tight max-w-3xl">
+            ADHS im Erwachsenenalter
+          </h1>
+          <p className="text-xl text-foreground/60 max-w-2xl leading-relaxed font-light">
+            Diagnose, Behandlung und Begleitung bei Aufmerksamkeitsdefizit-Hyperaktivitätsstörung in Duisburg
+          </p>
+        </FadeIn>
+      </div>
+    </section>
       {/* Inhalt */}
-      <section className="pt-8 pb-20 md:pt-12 md:pb-28 text-left">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="pb-20 md:pt-12 md:pb-28 text-left pt-[48px]">
+        <div className="container mx-auto px-4 md:px-8 pt-[1px] pb-[1px]">
           <div className="max-w-3xl">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight mb-[28px] mt-[0px]">
