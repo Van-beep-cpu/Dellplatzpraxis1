@@ -17,7 +17,7 @@ export default function Impressum() {
         </div>
       </section>
       {/* Inhalt */}
-      <section className="pb-20 md:pt-10 md:pb-28 pt-[4px]">
+      <section className="pb-20 md:pt-10 md:pb-28 pt-[0px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl">
 
