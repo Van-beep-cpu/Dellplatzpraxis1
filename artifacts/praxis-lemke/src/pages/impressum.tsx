@@ -4,7 +4,7 @@ export default function Impressum() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-28 pb-6 md:pt-36 md:pb-8 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden">
+      <section className="pt-28 md:pt-36 md:pb-8 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden pb-[0px]">
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <FadeIn>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-3">
