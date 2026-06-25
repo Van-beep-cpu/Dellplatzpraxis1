@@ -62,7 +62,7 @@ export default function Datenschutz() {
               <div className="divide-y divide-border/40">
                 {sections.map((section) => (
                   <div key={section.title} className="py-6">
-                    <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                    <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                       {section.title}
                     </h2>
                     {/* {section.title} wird hier eingefügt */}

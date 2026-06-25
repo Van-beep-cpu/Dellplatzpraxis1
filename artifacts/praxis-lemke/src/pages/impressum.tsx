@@ -28,7 +28,7 @@ export default function Impressum() {
 
                 {/* Praxisinhaber */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Praxisinhaber
                   </h2>
                   <p className="text-sm text-foreground/40 italic">
@@ -38,7 +38,7 @@ export default function Impressum() {
 
                 {/* Anschrift */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Anschrift
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
@@ -49,7 +49,7 @@ export default function Impressum() {
 
                 {/* Kontakt */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Kontakt
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
@@ -60,7 +60,7 @@ export default function Impressum() {
 
                 {/* Berufsbezeichnung */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Berufsbezeichnung und berufsrechtliche Regelungen
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
@@ -71,7 +71,7 @@ export default function Impressum() {
 
                 {/* Zuständige Kammer */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Zuständige Kammer
                   </h2>
                   <p className="text-sm text-foreground/40 italic">
@@ -81,7 +81,7 @@ export default function Impressum() {
 
                 {/* Aufsichtsbehörde */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Zuständige Aufsichtsbehörde
                   </h2>
                   <p className="text-sm text-foreground/40 italic">
@@ -91,7 +91,7 @@ export default function Impressum() {
 
                 {/* Umsatzsteuer-ID */}
                 <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-3">
+                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
                     Umsatzsteuer-Identifikationsnummer
                   </h2>
                   <p className="text-sm text-foreground/40 italic">
