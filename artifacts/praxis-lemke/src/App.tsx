@@ -11,6 +11,8 @@ import Ass from "@/pages/ass";
 import Psychotherapie from "@/pages/psychotherapie";
 import Schmerztherapie from "@/pages/schmerztherapie";
 import Downloads from "@/pages/downloads";
+import Impressum from "@/pages/impressum";
+import Datenschutz from "@/pages/datenschutz";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +30,8 @@ function App() {
               <Route path="/psychotherapie" element={<Psychotherapie />} />
               <Route path="/schmerztherapie" element={<Schmerztherapie />} />
               <Route path="/downloads" element={<Downloads />} />
+              <Route path="/impressum" element={<Impressum />} />
+              <Route path="/datenschutz" element={<Datenschutz />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
