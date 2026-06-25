@@ -16,9 +16,8 @@ export default function Impressum() {
           </FadeIn>
         </div>
       </section>
-
       {/* Inhalt */}
-      <section className="pt-8 pb-20 md:pt-10 md:pb-28">
+      <section className="pb-20 md:pt-10 md:pb-28 pt-[4px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl">
 
