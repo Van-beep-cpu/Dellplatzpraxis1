@@ -20,12 +20,10 @@ export default function Impressum() {
       <section className="pb-20 md:pt-10 md:pb-28 pt-[0px]">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-2xl">
-
             {/* Impressumsdaten werden hier eingefügt */}
 
             <FadeIn>
               <div className="divide-y divide-border/40">
-
                 {/* Praxisinhaber */}
                 <div className="py-6">
                   <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
@@ -42,7 +40,8 @@ export default function Impressum() {
                     Anschrift
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Straße und Hausnummer]<br />
+                    [Straße und Hausnummer]
+                    <br />
                     [PLZ Ort]
                   </p>
                 </div>
@@ -53,7 +52,8 @@ export default function Impressum() {
                     Kontakt
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Telefon: +49 ...]<br />
+                    [Telefon: +49 ...]
+                    <br />
                     [E-Mail: ...]
                   </p>
                 </div>
@@ -64,7 +64,9 @@ export default function Impressum() {
                     Berufsbezeichnung und berufsrechtliche Regelungen
                   </h2>
                   <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Berufsbezeichnung, z. B. Facharzt für Psychiatrie und Psychotherapie]<br />
+                    [Berufsbezeichnung, z. B. Facharzt für Psychiatrie und
+                    Psychotherapie]
+                    <br />
                     [Verliehen in: Deutschland]
                   </p>
                 </div>
@@ -98,10 +100,8 @@ export default function Impressum() {
                     [USt-IdNr. gemäß § 27a UStG, sofern vorhanden]
                   </p>
                 </div>
-
               </div>
             </FadeIn>
-
           </div>
         </div>
       </section>
