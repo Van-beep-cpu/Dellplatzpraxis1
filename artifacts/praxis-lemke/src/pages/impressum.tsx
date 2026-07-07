@@ -1,110 +1,109 @@
 import { FadeIn } from "@/components/FadeIn";
 
+const impressumSections = [
+  {
+    title: "Praxisinhaber",
+    content: <p>Kalle Lemke</p>,
+  },
+  {
+    title: "Anschrift",
+    content: (
+      <address className="not-italic leading-relaxed">
+        Grünstraße 17
+        <br />
+        47051 Duisburg
+      </address>
+    ),
+  },
+  {
+    title: "Kontakt",
+    content: (
+      <p>
+        <a
+          href="mailto:info@dellplatzpraxis.de"
+          className="font-medium text-primary decoration-primary/30 underline-offset-4 transition-colors hover:text-primary/85 hover:decoration-primary focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+        >
+          info@dellplatzpraxis.de
+        </a>
+      </p>
+    ),
+  },
+  {
+    title: "Berufsbezeichnung und berufsrechtliche Regelungen",
+    content: <p>Arzt</p>,
+  },
+  {
+    title: "Zuständige Kammer",
+    content: <p>Ärztekammer Nordrhein</p>,
+  },
+  {
+    title: "Umsatzsteuer-Identifikationsnummer",
+    content: <p>Keine USt-IdNr. vorhanden</p>,
+  },
+];
+
 export default function Impressum() {
   return (
-    <>
-      {/* Hero */}
-      <section className="pt-28 md:pt-36 md:pb-8 bg-gradient-to-br from-warm via-background to-background relative overflow-hidden pb-[0px]">
-        <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <main className="bg-background">
+      <section
+        aria-labelledby="impressum-heading"
+        aria-describedby="impressum-description"
+        className="relative overflow-hidden bg-gradient-to-b from-warm via-background to-background pt-28 pb-14 md:pt-40 md:pb-20"
+      >
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+        <div className="container relative mx-auto px-4 md:px-8">
           <FadeIn>
-            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-foreground mb-3">
-              Impressum
-            </h1>
-            <p className="text-base text-foreground/55 max-w-xl leading-relaxed">
-              Pflichtangaben gemäß § 5 TMG und § 55 RStV
-            </p>
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-primary/70 md:text-sm">
+                Rechtliche Angaben
+              </p>
+              <h1
+                id="impressum-heading"
+                className="mb-6 text-4xl font-semibold tracking-[-0.035em] text-foreground sm:text-5xl md:text-6xl"
+              >
+                Impressum
+              </h1>
+              <p
+                id="impressum-description"
+                className="mx-auto max-w-2xl text-base leading-8 text-foreground/65 md:text-lg"
+              >
+                Angaben gemäß den gesetzlichen Informationspflichten für die
+                Dellplatzpraxis.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
-      {/* Inhalt */}
-      <section className="pb-20 md:pt-10 md:pb-28 pt-[0px]">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="max-w-2xl">
-            {/* Impressumsdaten werden hier eingefügt */}
 
-            <FadeIn>
-              <div className="divide-y divide-border/40">
-                {/* Praxisinhaber */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Praxisinhaber
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic">
-                    [Name des Praxisinhabers]
-                  </p>
-                </div>
+      <section
+        aria-label="Impressumsangaben"
+        className="container mx-auto px-4 pb-20 md:px-8 md:pb-32"
+      >
+        <FadeIn>
+          <article className="mx-auto max-w-5xl overflow-hidden rounded-[1.75rem] border border-border/70 bg-white shadow-[0_20px_70px_rgba(28,42,35,0.08)] md:rounded-[2.25rem]">
+            <div className="h-1.5 bg-gradient-to-r from-primary/70 via-warm-accent/70 to-secondary/70" />
 
-                {/* Anschrift */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Anschrift
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Straße und Hausnummer]
-                    <br />
-                    [PLZ Ort]
-                  </p>
-                </div>
-
-                {/* Kontakt */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Kontakt
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Telefon: +49 ...]
-                    <br />
-                    [E-Mail: ...]
-                  </p>
-                </div>
-
-                {/* Berufsbezeichnung */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Berufsbezeichnung und berufsrechtliche Regelungen
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic leading-relaxed">
-                    [Berufsbezeichnung, z. B. Facharzt für Psychiatrie und
-                    Psychotherapie]
-                    <br />
-                    [Verliehen in: Deutschland]
-                  </p>
-                </div>
-
-                {/* Zuständige Kammer */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Zuständige Kammer
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic">
-                    [Ärztekammer, z. B. Ärztekammer Nordrhein]
-                  </p>
-                </div>
-
-                {/* Aufsichtsbehörde */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Zuständige Aufsichtsbehörde
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic">
-                    [Zuständige Aufsichtsbehörde]
-                  </p>
-                </div>
-
-                {/* Umsatzsteuer-ID */}
-                <div className="py-6">
-                  <h2 className="text-sm font-semibold uppercase tracking-widest text-foreground/40 mb-1.5">
-                    Umsatzsteuer-Identifikationsnummer
-                  </h2>
-                  <p className="text-sm text-foreground/40 italic">
-                    [USt-IdNr. gemäß § 27a UStG, sofern vorhanden]
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
+            <div className="px-6 py-7 sm:px-8 sm:py-8 md:px-12 md:py-10">
+              <dl className="divide-y divide-border/55">
+                {impressumSections.map((section) => (
+                  <div
+                    key={section.title}
+                    className="grid gap-3 py-6 first:pt-0 last:pb-0 sm:py-7 md:grid-cols-[minmax(13rem,17rem)_minmax(0,1fr)] md:gap-10 md:py-8"
+                  >
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/55 md:pt-1.5">
+                      {section.title}
+                    </dt>
+                    <dd className="max-w-2xl text-base leading-8 text-foreground sm:text-lg sm:leading-9">
+                      {section.content}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </article>
+        </FadeIn>
       </section>
-    </>
+    </main>
   );
 }
