@@ -27,7 +27,7 @@ function GoogleMapEmbed() {
   }, []);
 
   const loadGoogleMap = () => {
-    saveCookieConsent("all");
+    saveCookieConsent({ externalServices: true });
     setCanLoadMap(true);
   };
 
