@@ -1,4 +1,5 @@
 import React from "react";
+import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 
@@ -14,10 +15,44 @@ const DEFAULT_CONSENT: StoredConsent = {
   externalServices: false,
 };
 
-function readCookieConsent(): StoredConsent | null {
+function logCookieConsentDebug(
+  status: string,
+  values: Record<string, unknown> = {},
+) {
+  if (!import.meta.env.DEV || typeof window === "undefined") return;
+
+  console.log("[CookieConsent]", {
+    status,
+    consentKey: CONSENT_KEY,
+    storedConsentValue: readStoredConsentValue(),
+    origin: window.location.origin,
+    pathname: window.location.pathname,
+    ...values,
+  });
+}
+
+function readStoredConsentValue() {
   if (typeof window === "undefined") return null;
 
-  const stored = window.localStorage.getItem(CONSENT_KEY);
+  try {
+    return window.localStorage.getItem(CONSENT_KEY);
+  } catch (error) {
+    if (import.meta.env.DEV) {
+      console.log("[CookieConsent]", {
+        status: "localStorage unavailable",
+        consentKey: CONSENT_KEY,
+        storedConsentValue: null,
+        origin: window.location.origin,
+        pathname: window.location.pathname,
+        error,
+      });
+    }
+    return null;
+  }
+}
+
+function readCookieConsent(): StoredConsent | null {
+  const stored = readStoredConsentValue();
   if (!stored) return null;
 
   if (stored === "all") {
@@ -41,6 +76,10 @@ function readCookieConsent(): StoredConsent | null {
   }
 }
 
+function shouldOpenCookieConsent() {
+  return typeof window !== "undefined" && readCookieConsent() === null;
+}
+
 export function hasExternalServicesConsent() {
   return readCookieConsent()?.externalServices === true;
 }
@@ -54,26 +93,44 @@ export function saveCookieConsent(nextConsent: Partial<StoredConsent>) {
     necessary: true,
   };
 
-  window.localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  try {
+    window.localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  } catch (error) {
+    logCookieConsentDebug("localStorage save failed", { error });
+    return;
+  }
+  logCookieConsentDebug("saved", { consent, isOpen: false });
   window.dispatchEvent(
     new CustomEvent(COOKIE_CONSENT_CHANGED_EVENT, { detail: consent }),
   );
 }
 
 export function CookieConsent() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(shouldOpenCookieConsent);
   const [showSettings, setShowSettings] = React.useState(false);
   const [externalServicesEnabled, setExternalServicesEnabled] =
     React.useState(false);
 
   React.useEffect(() => {
     const stored = readCookieConsent();
-    if (stored) {
-      setExternalServicesEnabled(stored.externalServices);
-      return;
-    }
-    setIsOpen(true);
+    const nextIsOpen = stored === null;
+
+    setIsOpen(nextIsOpen);
+    setExternalServicesEnabled(stored?.externalServices === true);
+    logCookieConsentDebug("mounted", {
+      isOpen: nextIsOpen,
+      renderStatus: nextIsOpen ? "banner visible" : "banner hidden",
+      parsedConsent: stored,
+    });
   }, []);
+
+  React.useEffect(() => {
+    logCookieConsentDebug("render", {
+      isOpen,
+      renderStatus: isOpen ? "banner visible" : "banner hidden",
+      showSettings,
+    });
+  }, [isOpen, showSettings]);
 
   React.useEffect(() => {
     const openSettings = () => {
@@ -81,6 +138,7 @@ export function CookieConsent() {
       setExternalServicesEnabled(currentConsent?.externalServices === true);
       setShowSettings(true);
       setIsOpen(true);
+      logCookieConsentDebug("settings opened", { isOpen: true });
     };
     window.addEventListener(COOKIE_SETTINGS_EVENT, openSettings);
     return () =>
@@ -96,9 +154,9 @@ export function CookieConsent() {
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-x-0 bottom-0 z-[100] p-4 md:p-6"
+      className="fixed inset-x-0 bottom-0 z-[9999] p-4 md:p-6"
       role="region"
       aria-label="Cookie-Einstellungen"
     >
@@ -186,7 +244,8 @@ export function CookieConsent() {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
