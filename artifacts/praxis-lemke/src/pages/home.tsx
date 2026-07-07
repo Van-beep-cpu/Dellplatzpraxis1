@@ -11,9 +11,44 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
+import { hasExternalServicesConsent } from "@/components/CookieConsent";
 
 import heroBg from "@/assets/images/hero-therapy.webp";
 import drLemke from "@/assets/images/foto.png";
+
+function GoogleMapEmbed() {
+  const [canLoadMap, setCanLoadMap] = React.useState(false);
+
+  React.useEffect(() => {
+    setCanLoadMap(hasExternalServicesConsent());
+    const handleConsentChange = () => setCanLoadMap(hasExternalServicesConsent());
+    window.addEventListener("cookie-consent:changed", handleConsentChange);
+    return () => window.removeEventListener("cookie-consent:changed", handleConsentChange);
+  }, []);
+
+  return (
+    <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[260px] sm:h-[340px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40">
+      {canLoadMap ? (
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9972370724036!2d6.7640248!3d51.4287841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf67b822d8e7%3A0x63ce9a75d5e2197f!2sGr%C3%BCnstra%C3%9Fe%2017%2C%2047051%20Duisburg%2C%20Germany!5e0!3m2!1sen!2sus!4v1709230588147!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={false}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Google Maps Standort"
+        ></iframe>
+      ) : (
+        <div className="flex h-full items-center justify-center bg-light px-6 text-center">
+          <p className="max-w-xl text-sm leading-relaxed text-foreground/65 sm:text-base">
+            Zum Anzeigen der Karte wird Google Maps geladen. Dabei können Daten an Google übertragen werden.
+          </p>
+        </div>
+      )}
+    </FadeIn>
+  );
+}
 
 export default function Home() {
   const scrollTo = (id: string) => {
@@ -24,43 +59,43 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative flex min-h-[720px] items-center overflow-hidden sm:min-h-screen max-sm:min-h-[620px]">
         <div className="absolute inset-0 z-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover opacity-75" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/65 to-background"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 py-24">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 py-20 sm:py-24 max-sm:pt-24 max-sm:pb-12">
           <div className="max-w-3xl">
             <FadeIn>
-              <p className="text-sm tracking-widest text-foreground/45 mb-6 uppercase font-medium">
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
                 Willkommen in der Dellplatzpraxis
               </p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-foreground mb-6 leading-[1.08]">
+              <h1 className="mb-4 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
                 Kalle Lemke
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="text-xl md:text-2xl text-foreground/65 mb-5 max-w-2xl leading-relaxed font-light">
+              <p className="mb-3 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-5 sm:text-xl md:text-2xl">
                 Privatärztliche Praxis für Gesundheit
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="text-base md:text-lg text-foreground/55 mb-8 max-w-xl leading-relaxed">
+              <p className="mb-6 max-w-xl text-base leading-relaxed text-foreground/55 sm:mb-8 md:text-lg">
                 Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="flex flex-wrap gap-4">
+            <FadeIn delay={0.2} className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Button
                 asChild
                 size="lg"
-                className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md"
+                className="h-12 rounded-full px-7 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md sm:h-14 sm:px-10"
               >
                 <a
                   href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
@@ -74,7 +109,7 @@ export default function Home() {
                 variant="outline"
                 size="lg"
                 onClick={() => scrollTo("leistungen")}
-                className="rounded-full px-10 h-14 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm"
+                className="h-12 rounded-full px-7 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm sm:h-14 sm:px-10"
               >
                 Leistungen entdecken
               </Button>
@@ -110,7 +145,7 @@ export default function Home() {
       <section id="leistungen" className="py-28 md:py-40">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Unsere Leistungen</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Umfassende diagnostische und therapeutische Angebote für Ihre seelische Gesundheit.
@@ -174,7 +209,7 @@ export default function Home() {
       <section className="py-28 md:py-40 bg-light">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Der Weg zu uns</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Ein transparenter und strukturierter Ablauf für Ihre bestmögliche Versorgung.
@@ -239,7 +274,7 @@ export default function Home() {
       <section className="py-28 md:py-40 bg-warm">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Unser Team</h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
                 Wir begleiten Sie mit Einfühlungsvermögen, Fachkompetenz und persönlichem Engagement.
@@ -291,16 +326,16 @@ export default function Home() {
       </section>
 
       {/* 7. Kontakt & Öffnungszeiten */}
-      <section id="kontakt" className="py-28 md:py-40 bg-background border-t border-border/40">
+      <section id="kontakt" className="py-20 md:py-40 bg-background border-t border-border/40">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Kontakt & Standort</h2>
-              <p className="text-foreground/55">Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze vorhanden</p>
+              <p className="text-foreground/55 leading-relaxed">Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze vorhanden</p>
             </div>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-12">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-12 max-w-5xl mx-auto mb-10 md:mb-12">
             <FadeIn>
               <h3 className="text-xl font-semibold mb-7">Kontakt</h3>
               <div className="space-y-5 mb-8">
@@ -336,7 +371,7 @@ export default function Home() {
 
             <FadeIn delay={0.2}>
               <h3 className="text-xl font-semibold mb-7">Öffnungszeiten</h3>
-              <div className="bg-white p-7 rounded-2xl shadow-sm border border-border/40">
+              <div className="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-border/40">
                 <table className="w-full">
                   <tbody className="divide-y divide-border/40">
                     {[
@@ -348,7 +383,7 @@ export default function Home() {
                     ].map(({ day, hours }) => (
                       <tr key={day} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                         <td className="py-3.5 font-medium">{day}</td>
-                        <td className="pb-3 sm:py-3.5 text-foreground/60 sm:text-right">{hours}</td>
+                        <td className="pb-3 sm:py-3.5 text-foreground/60 sm:text-right leading-relaxed break-words">{hours}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -357,18 +392,7 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[380px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9972370724036!2d6.7640248!3d51.4287841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf67b822d8e7%3A0x63ce9a75d5e2197f!2sGr%C3%BCnstra%C3%9Fe%2017%2C%2047051%20Duisburg%2C%20Germany!5e0!3m2!1sen!2sus!4v1709230588147!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Google Maps Standort"
-            ></iframe>
-          </FadeIn>
+          <GoogleMapEmbed />
         </div>
       </section>
 
