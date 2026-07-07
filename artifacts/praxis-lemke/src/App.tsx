@@ -13,6 +13,7 @@ import Schmerztherapie from "@/pages/schmerztherapie";
 import Downloads from "@/pages/downloads";
 import Impressum from "@/pages/impressum";
 import Datenschutz from "@/pages/datenschutz";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ function App() {
           </Routes>
         </BrowserRouter>
         <Toaster />
+        <CookieConsent />
       </TooltipProvider>
     </QueryClientProvider>
   );

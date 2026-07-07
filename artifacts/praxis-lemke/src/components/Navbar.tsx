@@ -13,6 +13,8 @@ const leistungen = [
 
 const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
 const anchorHref = (id: string) => `${basePath}/#${id}`;
+const doctolibHref =
+  "https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -135,7 +137,7 @@ export default function Navbar() {
             Downloads
           </Link>
           <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
-            <a href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile" target="_blank" rel="noopener noreferrer">
+            <a href={doctolibHref} target="_blank" rel="noopener noreferrer">
               Termin bei Doctolib buchen
             </a>
           </Button>
@@ -149,7 +151,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg py-4 px-4 flex flex-col gap-2">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg py-4 px-4 flex max-h-[calc(100vh-82px)] flex-col gap-2 overflow-y-auto">
           <div>
             <button
               onClick={() => setIsMobileLeistungenOpen((v) => !v)}
@@ -199,11 +201,10 @@ export default function Navbar() {
           <Link to="/downloads" className="py-2 text-base font-medium text-foreground/75">
             Downloads
           </Link>
-          <Button
-            onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, "kontakt")}
-            className="bg-primary text-white w-full rounded-full h-12 text-base mt-2"
-          >
-            Termin buchen
+          <Button asChild className="mt-2 h-12 w-full rounded-full bg-[#00A8CC] text-base text-white hover:bg-[#0096b8]">
+            <a href={doctolibHref} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              Termin bei Doctolib buchen
+            </a>
           </Button>
         </div>
       )}
