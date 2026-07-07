@@ -49,7 +49,7 @@ export default function Footer() {
               <li><Link to="/impressum" className="hover:text-white transition-colors">Impressum</Link></li>
               <li><Link to="/datenschutz" className="hover:text-white transition-colors">Datenschutz</Link></li>
               <li><Link to="/downloads" className="hover:text-white transition-colors">Downloads</Link></li>
-              <li><button type="button" onClick={openCookieSettings} className="text-left hover:text-white transition-colors">Cookie-Einstellungen ändern</button></li>
+              <li><button type="button" onClick={openCookieSettings} className="text-left hover:text-white transition-colors">Cookie-Einstellungen</button></li>
             </ul>
             
           </div>

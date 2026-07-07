@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
-import { hasExternalServicesConsent } from "@/components/CookieConsent";
+import { COOKIE_CONSENT_CHANGED_EVENT, hasExternalServicesConsent, saveCookieConsent } from "@/components/CookieConsent";
 
 import heroBg from "@/assets/images/hero-therapy.webp";
 import drLemke from "@/assets/images/foto.png";
@@ -22,9 +22,14 @@ function GoogleMapEmbed() {
   React.useEffect(() => {
     setCanLoadMap(hasExternalServicesConsent());
     const handleConsentChange = () => setCanLoadMap(hasExternalServicesConsent());
-    window.addEventListener("cookie-consent:changed", handleConsentChange);
-    return () => window.removeEventListener("cookie-consent:changed", handleConsentChange);
+    window.addEventListener(COOKIE_CONSENT_CHANGED_EVENT, handleConsentChange);
+    return () => window.removeEventListener(COOKIE_CONSENT_CHANGED_EVENT, handleConsentChange);
   }, []);
+
+  const loadGoogleMap = () => {
+    saveCookieConsent("all");
+    setCanLoadMap(true);
+  };
 
   return (
     <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[260px] sm:h-[340px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40">
@@ -41,9 +46,14 @@ function GoogleMapEmbed() {
         ></iframe>
       ) : (
         <div className="flex h-full items-center justify-center bg-light px-6 text-center">
-          <p className="max-w-xl text-sm leading-relaxed text-foreground/65 sm:text-base">
-            Zum Anzeigen der Karte wird Google Maps geladen. Dabei können Daten an Google übertragen werden.
-          </p>
+          <div className="max-w-xl">
+            <p className="text-sm leading-relaxed text-foreground/65 sm:text-base">
+              Zum Anzeigen der Karte wird Google Maps geladen. Dabei können Daten an Google übertragen werden.
+            </p>
+            <Button className="mt-5 rounded-full bg-[#00A8CC] text-white hover:bg-[#0096b8]" onClick={loadGoogleMap}>
+              Google Maps laden
+            </Button>
+          </div>
         </div>
       )}
     </FadeIn>
