@@ -92,7 +92,7 @@ export default function Datenschutz() {
                   Kalle Lemke<br />
                   Grünstr. 17<br />
                   47051 Duisburg<br />
-                  Telefon: [HIER TELEFONNUMMER EINTRAGEN]<br />
+                  Telefon: 01735125939 <br />
                   E-Mail: info@dellplatzpraxis.de
                 </p>
                 <p>
