@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
 import { COOKIE_CONSENT_CHANGED_EVENT, hasExternalServicesConsent, saveCookieConsent } from "@/components/CookieConsent";
 
-import heroBg from "@/assets/images/hero-therapy.webp";
+import heroBg from "@/assets/images/hero-new.jpeg";
 import drLemke from "@/assets/images/foto.png";
 
 function GoogleMapEmbed() {
@@ -280,7 +280,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Team */}
+      {/* 6. Team /}
       <section className="py-28 md:py-40 bg-warm">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
