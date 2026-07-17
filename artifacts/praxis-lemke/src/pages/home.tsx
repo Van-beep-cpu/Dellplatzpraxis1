@@ -101,7 +101,7 @@ export default function Home() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <FadeIn delay={0.2} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
               <Button
                 asChild
                 size="lg"
