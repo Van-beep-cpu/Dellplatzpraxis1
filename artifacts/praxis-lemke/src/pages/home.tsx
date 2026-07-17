@@ -102,19 +102,12 @@ export default function Home() {
             </FadeIn>
 
 
-            <FadeIn delay={0.2} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
-              <Button
-                asChild
-                size="lg"
-                className="h-12 rounded-full px-7 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md sm:h-14 sm:px-10"
-              >
-                <a
-                  href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-
-            
-
+            <FadeIn delay={0.2}>
+              <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
+                <Button
+                  asChild
+                  size="lg"
+                  className="h-12 rounded-full px-7 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md sm:h-14 sm:px-10"
                 >
                   <a
                     href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
@@ -124,6 +117,7 @@ export default function Home() {
                     Termin bei Doctolib buchen
                   </a>
                 </Button>
+
                 <Button
                   variant="outline"
                   size="lg"
@@ -290,7 +284,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. Team /}
+      {/* 6. Team */}
       <section className="py-28 md:py-40 bg-warm">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
