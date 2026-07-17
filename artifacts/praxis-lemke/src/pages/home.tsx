@@ -101,6 +101,7 @@ export default function Home() {
               </p>
             </FadeIn>
 
+
             <FadeIn delay={0.2} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
               <Button
                 asChild
@@ -111,18 +112,27 @@ export default function Home() {
                   href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
                   target="_blank"
                   rel="noopener noreferrer"
+
+            
+
                 >
-                  Termin bei Doctolib buchen
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => scrollTo("leistungen")}
-                className="h-12 rounded-full px-7 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm sm:h-14 sm:px-10"
-              >
-                Leistungen entdecken
-              </Button>
+                  <a
+                    href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Termin bei Doctolib buchen
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => scrollTo("leistungen")}
+                  className="h-12 rounded-full px-7 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm sm:h-14 sm:px-10"
+                >
+                  Leistungen entdecken
+                </Button>
+              </div>
             </FadeIn>
           </div>
         </div>
