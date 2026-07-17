@@ -75,7 +75,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/78 via-background/53 to-background/88"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 py-20 sm:py-24 max-sm:pt-24 max-sm:pb-12">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
           <div className="max-w-3xl -translate-y-10">
             <FadeIn>
               <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
@@ -101,7 +101,7 @@ export default function Home() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.2} className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-9">
+            <FadeIn delay={0.2} className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Button
                 asChild
                 size="lg"
