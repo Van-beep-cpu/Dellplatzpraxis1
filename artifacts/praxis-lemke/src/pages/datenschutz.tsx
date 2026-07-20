@@ -165,6 +165,10 @@ export default function Datenschutz() {
                 <p>
                   Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalität dieser Website eingeschränkt sein.
                 </p>
+                <h3>Geschützter Patientenbereich</h3>
+                <p>
+                  Auf unserer Website stellen wir einen passwortgeschützten Bereich zur Verfügung, über den Patienten Informationsmaterialien und Testunterlagen herunterladen können. Der Zugang ist ausschließlich autorisierten Personen vorbehalten. Im Rahmen der Nutzung werden technisch erforderliche Daten (z. B. IP-Adresse, Zeitpunkt des Zugriffs und Server-Logdaten) verarbeitet, soweit dies zur Bereitstellung und Sicherheit des geschützten Bereichs erforderlich ist. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Sofern im Einzelfall personenbezogene oder besondere Kategorien personenbezogener Daten verarbeitet werden, erfolgt dies ausschließlich im Rahmen der gesetzlichen Vorschriften.
+                </p>
               </section>
 
               <section aria-labelledby="plugins-tools">
