@@ -285,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* 6. Team */}
-      <section className="py-28 md:py-40 bg-warm">
+      {/*<section className="py-28 md:py-40 bg-warm">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-10 md:mb-16">
@@ -337,7 +337,7 @@ export default function Home() {
             </FadeIn>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* 7. Kontakt & Öffnungszeiten */}
       <section id="kontakt" className="py-20 md:py-40 bg-background border-t border-border/40">
