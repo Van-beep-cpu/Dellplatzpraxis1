@@ -8,10 +8,16 @@ import {
   Mail,
   CheckCircle2,
   User,
+  CalendarCheck,
+  Video,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
-import { COOKIE_CONSENT_CHANGED_EVENT, hasExternalServicesConsent, saveCookieConsent } from "@/components/CookieConsent";
+import {
+  COOKIE_CONSENT_CHANGED_EVENT,
+  hasExternalServicesConsent,
+  saveCookieConsent,
+} from "@/components/CookieConsent";
 
 import heroBg from "@/assets/images/hero-new.jpeg";
 import drLemke from "@/assets/images/foto.png";
@@ -21,9 +27,14 @@ function GoogleMapEmbed() {
 
   React.useEffect(() => {
     setCanLoadMap(hasExternalServicesConsent());
-    const handleConsentChange = () => setCanLoadMap(hasExternalServicesConsent());
+    const handleConsentChange = () =>
+      setCanLoadMap(hasExternalServicesConsent());
     window.addEventListener(COOKIE_CONSENT_CHANGED_EVENT, handleConsentChange);
-    return () => window.removeEventListener(COOKIE_CONSENT_CHANGED_EVENT, handleConsentChange);
+    return () =>
+      window.removeEventListener(
+        COOKIE_CONSENT_CHANGED_EVENT,
+        handleConsentChange,
+      );
   }, []);
 
   const loadGoogleMap = () => {
@@ -32,7 +43,10 @@ function GoogleMapEmbed() {
   };
 
   return (
-    <FadeIn delay={0.1} className="max-w-5xl mx-auto h-[260px] sm:h-[340px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40">
+    <FadeIn
+      delay={0.1}
+      className="max-w-5xl mx-auto h-[260px] sm:h-[340px] md:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-border/40"
+    >
       {canLoadMap ? (
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9972370724036!2d6.7640248!3d51.4287841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf67b822d8e7%3A0x63ce9a75d5e2197f!2sGr%C3%BCnstra%C3%9Fe%2017%2C%2047051%20Duisburg%2C%20Germany!5e0!3m2!1sen!2sus!4v1709230588147!5m2!1sen!2sus"
@@ -48,9 +62,13 @@ function GoogleMapEmbed() {
         <div className="flex h-full items-center justify-center bg-light px-6 text-center">
           <div className="max-w-xl">
             <p className="text-sm leading-relaxed text-foreground/65 sm:text-base">
-              Zum Anzeigen der Karte wird Google Maps geladen. Dabei können Daten an Google übertragen werden.
+              Zum Anzeigen der Karte wird Google Maps geladen. Dabei können
+              Daten an Google übertragen werden.
             </p>
-            <Button className="mt-5 rounded-full bg-[#00A8CC] text-white hover:bg-[#0096b8]" onClick={loadGoogleMap}>
+            <Button
+              className="mt-5 rounded-full bg-[#00A8CC] text-white hover:bg-[#0096b8]"
+              onClick={loadGoogleMap}
+            >
               Google Maps laden
             </Button>
           </div>
@@ -59,6 +77,9 @@ function GoogleMapEmbed() {
     </FadeIn>
   );
 }
+
+const doctolibHref =
+  "https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile";
 
 export default function Home() {
   const scrollTo = (id: string) => {
@@ -69,71 +90,102 @@ export default function Home() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="relative flex min-h-[720px] items-center overflow-hidden sm:min-h-screen max-sm:min-h-[620px]">
+      <section className="mobile-hero relative flex min-h-[720px] items-center overflow-hidden sm:min-h-screen max-sm:min-h-[620px]">
         <div className="absolute inset-0 z-0">
-          <img src={heroBg} alt="" className="w-full h-full object-cover opacity-75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/78 via-background/53 to-background/88"></div>
+          <img
+            src={heroBg}
+            alt=""
+            className="mobile-hero-image w-full h-full object-cover opacity-75"
+          />
+          <div className="mobile-hero-overlay absolute inset-0 bg-gradient-to-b from-background/78 via-background/53 to-background/88"></div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
-          <div className="max-w-3xl -translate-y-10">
+        <div className="mobile-hero-container container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
+          <div className="mobile-hero-content max-w-3xl -translate-y-10">
             <FadeIn>
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
+              <p className="mobile-eyebrow mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
                 Willkommen in der Dellplatzpraxis
               </p>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <h1 className="mb-4 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
+              <h1 className="mobile-hero-title mb-4 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
                 Kalle Lemke
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="mb-3 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-5 sm:text-xl md:text-2xl">
-                Privatärztliche Praxis für Gesundheit
+              <p className="mobile-hero-subtitle mb-3 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-5 sm:text-xl md:text-2xl">
+                <span className="desktop-hero-copy">
+                  Privatärztliche Praxis für Gesundheit
+                </span>
+                <span className="mobile-hero-copy">
+                  Privatärztliche Praxis für Psychiatrie und Psychotherapie
+                </span>
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="mb-6 max-w-xl text-base leading-relaxed text-foreground/55 sm:mb-8 md:text-lg">
-                Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
+              <p className="mobile-hero-description mb-6 max-w-xl text-base leading-relaxed text-foreground/55 sm:mb-8 md:text-lg">
+                <span className="desktop-hero-copy">
+                  Begleitung bei psychischen Belastungen – persönlich vor Ort
+                  oder per Videosprechstunde.
+                </span>
+                <span className="mobile-hero-copy">
+                  Persönliche Begleitung bei psychischen und psychosomatischen
+                  Beschwerden – vor Ort in Duisburg oder per Videosprechstunde.
+                </span>
               </p>
             </FadeIn>
 
-
-            <FadeIn delay={0.2} className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
+            <FadeIn
+              delay={0.2}
+              className="mobile-hero-actions flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6"
+            >
               <Button
                 asChild
                 size="lg"
-                className="h-12 rounded-full px-7 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md sm:h-14 sm:px-10"
+                className="mobile-primary-cta h-12 rounded-full px-7 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0 shadow-md sm:h-14 sm:px-10"
               >
                 <a
-                  href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
+                  href={doctolibHref}
                   target="_blank"
                   rel="noopener noreferrer"
-
-            
-
+                  aria-label="Termin bei Doctolib buchen (öffnet in neuem Tab)"
                 >
-                  <a
-                    href="https://www.doctolib.de/privatpraxis/duisburg/kalle-lemke-praktizierender-arzt-und-psychotherapeuth/booking/specialities?source=profile"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Termin bei Doctolib buchen
-                  </a>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => scrollTo("leistungen")}
-                  className="h-12 rounded-full px-7 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm sm:h-14 sm:px-10"
-                >
-                  Leistungen entdecken
-                </Button>
-              </div>
+                  Termin bei Doctolib buchen
+                </a>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollTo("leistungen")}
+                className="mobile-secondary-cta h-12 rounded-full px-7 text-base font-medium border-foreground/20 hover:border-primary hover:text-primary bg-white/40 backdrop-blur-sm sm:h-14 sm:px-10"
+              >
+                Leistungen entdecken
+              </Button>
             </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      <section className="mobile-trustbar" aria-label="Praxisinformationen">
+        <div className="mobile-trustbar-grid">
+          <div>
+            <Stethoscope aria-hidden="true" size={16} />
+            <span>Privatärztliche Praxis</span>
+          </div>
+          <div>
+            <MapPin aria-hidden="true" size={16} />
+            <span>Standort Duisburg</span>
+          </div>
+          <div>
+            <Video aria-hidden="true" size={16} />
+            <span>Videosprechstunde möglich</span>
+          </div>
+          <div>
+            <CalendarCheck aria-hidden="true" size={16} />
+            <span>Termin über Doctolib</span>
           </div>
         </div>
       </section>
@@ -147,15 +199,42 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-semibold mb-8 tracking-tight">
                 Ganzheitliche Behandlung im Mittelpunkt
               </h2>
-              <p className="text-lg text-foreground/70 leading-loose mb-5">
-                In meiner Praxis in Duisburg begleite ich Sie bei psychischen und psychosomatischen Beschwerden mit einem ganzheitlichen Ansatz. Dabei betrachte ich nicht nur einzelne Symptome, sondern beziehe auch psychologische und soziale Aspekte in die Behandlung mit ein.
-              </p>
-              <p className="text-lg text-foreground/70 leading-loose mb-5">
-                Gemeinsam schauen wir, welcher Therapie- oder Behandlungsansatz für Ihre persönliche Situation am sinnvollsten ist. Falls erforderlich, kann die Behandlung auch medikamentös unterstützt werden, stets in enger Abstimmung mit Ihnen.
-              </p>
-              <p className="text-lg text-foreground/70 leading-loose">
-                Ein besonderer Schwerpunkt liegt unter anderem in der Behandlung von Depressionen, Suchterkrankungen sowie chronischen Schmerzsymptomen. Ich freue mich darauf, Sie kennenzulernen.
-              </p>
+              <div className="desktop-philosophy">
+                <p className="text-lg text-foreground/70 leading-loose mb-5">
+                  In meiner Praxis in Duisburg begleite ich Sie bei psychischen
+                  und psychosomatischen Beschwerden mit einem ganzheitlichen
+                  Ansatz. Dabei betrachte ich nicht nur einzelne Symptome,
+                  sondern beziehe auch psychologische und soziale Aspekte in die
+                  Behandlung mit ein.
+                </p>
+                <p className="text-lg text-foreground/70 leading-loose mb-5">
+                  Gemeinsam schauen wir, welcher Therapie- oder
+                  Behandlungsansatz für Ihre persönliche Situation am
+                  sinnvollsten ist. Falls erforderlich, kann die Behandlung auch
+                  medikamentös unterstützt werden, stets in enger Abstimmung mit
+                  Ihnen.
+                </p>
+                <p className="text-lg text-foreground/70 leading-loose">
+                  Ein besonderer Schwerpunkt liegt unter anderem in der
+                  Behandlung von Depressionen, Suchterkrankungen sowie
+                  chronischen Schmerzsymptomen. Ich freue mich darauf, Sie
+                  kennenzulernen.
+                </p>
+              </div>
+              <div className="mobile-philosophy">
+                <p>
+                  Psychische Beschwerden entstehen selten durch eine einzelne
+                  Ursache.
+                </p>
+                <p>
+                  Deshalb betrachte ich Körper, Psyche und Lebensumstände
+                  gemeinsam.
+                </p>
+                <p>
+                  Gemeinsam entwickeln wir einen Behandlungsweg, der zu Ihrer
+                  persönlichen Situation passt.
+                </p>
+              </div>
             </FadeIn>
           </div>
         </div>
@@ -166,9 +245,12 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Unsere Leistungen</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+                Unsere Leistungen
+              </h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-                Umfassende diagnostische und therapeutische Angebote für Ihre seelische Gesundheit.
+                Umfassende diagnostische und therapeutische Angebote für Ihre
+                seelische Gesundheit.
               </p>
             </div>
           </FadeIn>
@@ -179,11 +261,40 @@ export default function Home() {
                 <div className="w-12 h-12 bg-light rounded-2xl flex items-center justify-center mb-6 text-primary">
                   <Brain size={22} />
                 </div>
-                <h3 className="text-xl font-semibold mb-5">Behandlungsfelder</h3>
+                <h3 className="text-xl font-semibold mb-5">
+                  Behandlungsfelder
+                </h3>
                 <ul className="space-y-3">
-                  {["Depressionen", "Angststörungen", "Lebenskrisen", "Burnout"].map((s) => (
-                    <li key={s} className="flex items-center gap-3 text-foreground/70">
-                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
+                  {[
+                    [
+                      "Depressionen",
+                      "Wieder mehr Stabilität und Orientierung im Alltag gewinnen.",
+                    ],
+                    [
+                      "Angststörungen",
+                      "Ängste besser verstehen und Schritt für Schritt Sicherheit zurückgewinnen.",
+                    ],
+                    [
+                      "Lebenskrisen",
+                      "Belastende Veränderungen einordnen und neue Perspektiven entwickeln.",
+                    ],
+                    [
+                      "Burnout",
+                      "Erschöpfungsmuster erkennen und nachhaltige Entlastung schaffen.",
+                    ],
+                  ].map(([title, benefit]) => (
+                    <li
+                      key={title}
+                      className="flex items-start gap-3 text-foreground/70"
+                    >
+                      <CheckCircle2
+                        size={16}
+                        className="text-primary/60 shrink-0 mt-1"
+                      />
+                      <span>
+                        <span>{title}</span>
+                        <span className="mobile-benefit">{benefit}</span>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -195,11 +306,25 @@ export default function Home() {
                 <div className="w-12 h-12 bg-light rounded-2xl flex items-center justify-center mb-6 text-primary">
                   <Stethoscope size={22} />
                 </div>
-                <h3 className="text-xl font-semibold mb-5">Spezialisierungen</h3>
+                <h3 className="text-xl font-semibold mb-5">
+                  Spezialisierungen
+                </h3>
                 <ul className="space-y-3">
-                  {["ADHS im Erwachsenenalter", "Autismus-Spektrum", "Suchterkrankungen", "Chronische Schmerzen"].map((s) => (
-                    <li key={s} className="flex items-center gap-3 text-foreground/70">
-                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
+                  {[
+                    "ADHS im Erwachsenenalter",
+                    "Autismus-Spektrum",
+                    "Suchterkrankungen",
+                    "Chronische Schmerzen",
+                  ].map((s) => (
+                    <li
+                      key={s}
+                      className="flex items-center gap-3 text-foreground/70"
+                    >
+                      <CheckCircle2
+                        size={16}
+                        className="text-primary/60 shrink-0"
+                      />{" "}
+                      {s}
                     </li>
                   ))}
                 </ul>
@@ -213,11 +338,20 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold mb-5">Therapieformen</h3>
                 <ul className="space-y-3">
-                  {["Psychotherapie", "Schmerztherapie", "Online-Therapie"].map((s) => (
-                    <li key={s} className="flex items-center gap-3 text-foreground/70">
-                      <CheckCircle2 size={16} className="text-primary/60 shrink-0" /> {s}
-                    </li>
-                  ))}
+                  {["Psychotherapie", "Schmerztherapie", "Online-Therapie"].map(
+                    (s) => (
+                      <li
+                        key={s}
+                        className="flex items-center gap-3 text-foreground/70"
+                      >
+                        <CheckCircle2
+                          size={16}
+                          className="text-primary/60 shrink-0"
+                        />{" "}
+                        {s}
+                      </li>
+                    ),
+                  )}
                 </ul>
               </div>
             </FadeIn>
@@ -230,9 +364,12 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Der Weg zu uns</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+                Der Weg zu uns
+              </h2>
               <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-                Ein transparenter und strukturierter Ablauf für Ihre bestmögliche Versorgung.
+                Ein transparenter und strukturierter Ablauf für Ihre
+                bestmögliche Versorgung.
               </p>
             </div>
           </FadeIn>
@@ -241,17 +378,39 @@ export default function Home() {
             <div className="hidden md:block absolute top-12 left-12 right-12 h-px bg-border/40 z-0"></div>
             <div className="grid md:grid-cols-4 gap-10 relative z-10">
               {[
-                { step: "01", title: "Termin buchen", desc: "Kontaktieren Sie uns telefonisch oder online für einen ersten Termin." },
-                { step: "02", title: "Erstgespräch", desc: "Kennenlernen und Erfassung Ihrer aktuellen Lebenssituation und Beschwerden." },
-                { step: "03", title: "Diagnose", desc: "Sorgfältige medizinische und psychologische Diagnostik." },
-                { step: "04", title: "Behandlung", desc: "Gemeinsame Entwicklung und Umsetzung Ihres individuellen Therapieplans." },
+                {
+                  step: "01",
+                  title: "Termin buchen",
+                  desc: "Kontaktieren Sie uns telefonisch oder online für einen ersten Termin.",
+                },
+                {
+                  step: "02",
+                  title: "Erstgespräch",
+                  desc: "Kennenlernen und Erfassung Ihrer aktuellen Lebenssituation und Beschwerden.",
+                },
+                {
+                  step: "03",
+                  title: "Diagnose",
+                  desc: "Sorgfältige medizinische und psychologische Diagnostik.",
+                },
+                {
+                  step: "04",
+                  title: "Behandlung",
+                  desc: "Gemeinsame Entwicklung und Umsetzung Ihres individuellen Therapieplans.",
+                },
               ].map((item, i) => (
-                <FadeIn key={item.step} delay={i * 0.1} className="text-center md:text-left flex flex-col md:block items-center">
+                <FadeIn
+                  key={item.step}
+                  delay={i * 0.1}
+                  className="text-center md:text-left flex flex-col md:block items-center"
+                >
                   <div className="w-24 h-24 bg-white border border-border/60 rounded-full flex items-center justify-center text-2xl font-semibold text-primary mb-6 shadow-sm">
                     {item.step}
                   </div>
                   <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                  <p className="text-foreground/60 text-center md:text-left leading-relaxed text-sm">{item.desc}</p>
+                  <p className="text-foreground/60 text-center md:text-left leading-relaxed text-sm">
+                    {item.desc}
+                  </p>
                 </FadeIn>
               ))}
             </div>
@@ -265,24 +424,47 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
             <FadeIn>
               <div className="aspect-[3/4] rounded-3xl overflow-hidden relative shadow-lg">
-                <img src={drLemke} alt="Kalle Lemke" className="w-full h-full object-cover" />
+                <img
+                  src={drLemke}
+                  alt="Kalle Lemke"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <p className="text-sm tracking-widest text-primary/70 uppercase font-medium mb-4">Über mich</p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-7">Kalle Lemke</h2>
+              <p className="text-sm tracking-widest text-primary/70 uppercase font-medium mb-4">
+                Über mich
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-7">
+                Kalle Lemke
+              </h2>
               <p className="text-lg text-foreground/70 mb-8 leading-loose">
-                Nach über 20 Jahren medizinischer und persönlicher Entwicklung kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher Weg hat mich über viele Stationen geführt und mich in meiner Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde ich medizinisches Fachwissen mit einem Verständnis für die individuellen Lebenssituationen meiner Patienten.
+                Nach über 20 Jahren medizinischer und persönlicher Entwicklung
+                kehre ich in meine Heimatstadt Duisburg zurück. Mein beruflicher
+                Weg hat mich über viele Stationen geführt und mich in meiner
+                Arbeit wie auch persönlich geprägt. In meiner Praxis verbinde
+                ich medizinisches Fachwissen mit einem Verständnis für die
+                individuellen Lebenssituationen meiner Patienten.
               </p>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
-                  <CheckCircle2 size={18} className="text-warm-accent shrink-0" />
-                  <span className="font-medium text-foreground/80">Deutsch & Englisch</span>
+                  <CheckCircle2
+                    size={18}
+                    className="text-warm-accent shrink-0"
+                  />
+                  <span className="font-medium text-foreground/80">
+                    Deutsch & Englisch
+                  </span>
                 </div>
                 <div className="flex items-center gap-3 bg-warm px-5 py-3.5 rounded-2xl">
-                  <CheckCircle2 size={18} className="text-warm-accent shrink-0" />
-                  <span className="font-medium text-foreground/80">Mitglied DGPPN</span>
+                  <CheckCircle2
+                    size={18}
+                    className="text-warm-accent shrink-0"
+                  />
+                  <span className="font-medium text-foreground/80">
+                    Mitglied DGPPN
+                  </span>
                 </div>
               </div>
             </FadeIn>
@@ -346,12 +528,20 @@ export default function Home() {
       </section>
 
       {/* 7. Kontakt & Öffnungszeiten */}
-      <section id="kontakt" className="py-20 md:py-40 bg-background border-t border-border/40">
+      <section
+        id="kontakt"
+        className="py-20 md:py-40 bg-background border-t border-border/40"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn>
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">Kontakt & Standort</h2>
-              <p className="text-foreground/55 leading-relaxed">Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze vorhanden</p>
+              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
+                Kontakt & Standort
+              </h2>
+              <p className="text-foreground/55 leading-relaxed">
+                Grünstraße 17, 47051 Duisburg · Erdgeschoss · Parkplätze
+                vorhanden
+              </p>
             </div>
           </FadeIn>
 
@@ -365,7 +555,9 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/50 mb-1">E-Mail</p>
-                    <p className="text-lg font-medium">info@dellplatzpraxis.de</p>
+                    <p className="text-lg font-medium">
+                      info@dellplatzpraxis.de
+                    </p>
                   </div>
                 </div>
 
@@ -375,16 +567,22 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-sm text-foreground/50 mb-1">Adresse</p>
-                    <p className="text-lg font-medium">Grünstraße 17, 47051 Duisburg</p>
+                    <p className="text-lg font-medium">
+                      Grünstraße 17, 47051 Duisburg
+                    </p>
                   </div>
                 </div>
               </div>
 
               <div className="p-5 bg-warm rounded-2xl border border-border/30">
-                <p className="font-medium text-accent mb-2">Wichtige Hinweise:</p>
+                <p className="font-medium text-accent mb-2">
+                  Wichtige Hinweise:
+                </p>
                 <ul className="space-y-2 text-foreground/70 text-sm">
                   <li>• Hausbesuche nach Vereinbarung möglich</li>
-                  <li>• Im Notfall wählen Sie bitte die <strong>116117</strong></li>
+                  <li>
+                    • Im Notfall wählen Sie bitte die <strong>116117</strong>
+                  </li>
                 </ul>
               </div>
             </FadeIn>
@@ -396,14 +594,28 @@ export default function Home() {
                   <tbody className="divide-y divide-border/40">
                     {[
                       { day: "Montag", hours: "11:00 – 18:00" },
-                      { day: "Dienstag", hours: "10:00 – 13:00, 14:00 – 18:00" },
-                      { day: "Mittwoch", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
-                      { day: "Donnerstag", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
+                      {
+                        day: "Dienstag",
+                        hours: "10:00 – 13:00, 14:00 – 18:00",
+                      },
+                      {
+                        day: "Mittwoch",
+                        hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00",
+                      },
+                      {
+                        day: "Donnerstag",
+                        hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00",
+                      },
                       { day: "Freitag", hours: "10:00 – 13:00" },
                     ].map(({ day, hours }) => (
-                      <tr key={day} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                      <tr
+                        key={day}
+                        className="flex flex-col sm:flex-row sm:justify-between sm:items-center"
+                      >
                         <td className="py-3.5 font-medium">{day}</td>
-                        <td className="pb-3 sm:py-3.5 text-foreground/60 sm:text-right leading-relaxed break-words">{hours}</td>
+                        <td className="pb-3 sm:py-3.5 text-foreground/60 sm:text-right leading-relaxed break-words">
+                          {hours}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -420,11 +632,16 @@ export default function Home() {
       <section className="py-20 md:py-24 bg-warm border-t border-border/30">
         <div className="container mx-auto px-4 md:px-8">
           <FadeIn className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-semibold tracking-tight mb-3">Abrechnung</h2>
-            <p className="text-xl text-primary font-medium mb-5">Privat Versicherte & Selbstzahlende</p>
+            <h2 className="text-3xl font-semibold tracking-tight mb-3">
+              Abrechnung
+            </h2>
+            <p className="text-xl text-primary font-medium mb-5">
+              Privat Versicherte & Selbstzahlende
+            </p>
             <p className="text-foreground/65 leading-relaxed">
-              Die Abrechnung erfolgt transparent nach der Gebührenordnung für Ärzte (GOÄ).
-              Gesetzlich Versicherte können als Selbstzahlende behandelt werden.
+              Die Abrechnung erfolgt transparent nach der Gebührenordnung für
+              Ärzte (GOÄ). Gesetzlich Versicherte können als Selbstzahlende
+              behandelt werden.
             </p>
           </FadeIn>
         </div>

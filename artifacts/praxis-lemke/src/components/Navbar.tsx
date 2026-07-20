@@ -20,7 +20,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [isLeistungenOpen, setIsLeistungenOpen] = React.useState(false);
-  const [isMobileLeistungenOpen, setIsMobileLeistungenOpen] = React.useState(false);
+  const [isMobileLeistungenOpen, setIsMobileLeistungenOpen] =
+    React.useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHome = location.pathname === "/" || location.pathname === "";
@@ -34,7 +35,10 @@ export default function Navbar() {
 
   React.useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setIsLeistungenOpen(false);
       }
     };
@@ -62,18 +66,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      className={`site-nav fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isScrolled || !isHome
           ? "bg-white/95 backdrop-blur-md shadow-sm py-3"
           : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+      <div className="site-nav-inner container mx-auto px-4 md:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <img
             src={logoSrc}
             alt="Stellplatzpraxis Lemke"
-            className="h-14 object-contain"
+            className="site-logo h-14 object-contain"
             style={{ mixBlendMode: "multiply" }}
           />
         </Link>
@@ -136,7 +140,11 @@ export default function Navbar() {
           >
             Downloads
           </Link>
-          <Button asChild size="lg" className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0">
+          <Button
+            asChild
+            size="lg"
+            className="rounded-full px-10 h-14 text-base font-medium bg-[#00A8CC] hover:bg-[#0096b8] text-white border-0"
+          >
             <a href={doctolibHref} target="_blank" rel="noopener noreferrer">
               Termin bei Doctolib buchen
             </a>
@@ -144,14 +152,38 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="mobile-nav-actions md:hidden">
+          <Button
+            asChild
+            className="mobile-header-appointment h-11 rounded-full bg-[#00A8CC] px-4 text-sm font-medium text-white hover:bg-[#0096b8]"
+          >
+            <a
+              href={doctolibHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Termin bei Doctolib buchen (öffnet in neuem Tab)"
+            >
+              Termin
+            </a>
+          </Button>
+          <button
+            className="mobile-menu-toggle p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg py-4 px-4 flex max-h-[calc(100vh-82px)] flex-col gap-2 overflow-y-auto">
+        <div
+          id="mobile-navigation"
+          className="md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg py-4 px-4 flex max-h-[calc(100vh-82px)] flex-col gap-2 overflow-y-auto"
+        >
           <div>
             <button
               onClick={() => setIsMobileLeistungenOpen((v) => !v)}
@@ -198,11 +230,22 @@ export default function Navbar() {
           >
             Kontakt
           </a>
-          <Link to="/downloads" className="py-2 text-base font-medium text-foreground/75">
+          <Link
+            to="/downloads"
+            className="py-2 text-base font-medium text-foreground/75"
+          >
             Downloads
           </Link>
-          <Button asChild className="mt-2 h-12 w-full rounded-full bg-[#00A8CC] text-base text-white hover:bg-[#0096b8]">
-            <a href={doctolibHref} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+          <Button
+            asChild
+            className="mt-2 h-12 w-full rounded-full bg-[#00A8CC] text-base text-white hover:bg-[#0096b8]"
+          >
+            <a
+              href={doctolibHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               Termin bei Doctolib buchen
             </a>
           </Button>
