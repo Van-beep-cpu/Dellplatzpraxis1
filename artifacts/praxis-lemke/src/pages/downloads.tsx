@@ -2,6 +2,7 @@ import React from "react";
 import { Lock, FileDown, Eye, EyeOff, ExternalLink, ClipboardList, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/FadeIn";
+import protectedDownloadGroups from "@/data/protected-downloads.json";
 
 const PASSWORD = "praxis2024";
 
@@ -35,23 +36,27 @@ const pdfDownloads = [
   },
 ];
 
-const protectedDocs = [
-  {
-    label: "Anamnesebogen (ausgefüllt)",
-    desc: "Ihr persönlicher Anamnesebogen zur Vorbereitung.",
-    filename: "Anamnesebogen_persoenlich.pdf",
-  },
-  {
-    label: "Schweigepflichtsentbindung",
-    desc: "Für die Kommunikation mit anderen behandelnden Ärzten.",
-    filename: "Schweigepflichtsentbindung.pdf",
-  },
-  {
-    label: "Therapieplan",
-    desc: "Ihr individueller Behandlungsplan.",
-    filename: "Therapieplan.pdf",
-  },
-];
+type ProtectedDownload = {
+  label: string;
+  format: string;
+  size?: number;
+  sizeLabel?: string;
+  path: string;
+};
+
+type ProtectedDownloadGroup = {
+  category: string;
+  files: ProtectedDownload[];
+};
+
+const protectedGroups = protectedDownloadGroups as ProtectedDownloadGroup[];
+
+const encodeProtectedPath = (filePath: string) =>
+  filePath
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+
 
 function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const [input, setInput] = React.useState("");
@@ -246,37 +251,56 @@ export default function Downloads() {
                 <PasswordGate onUnlock={() => setUnlocked(true)} />
               </FadeIn>
             ) : (
-              <div className="space-y-3">
+              <div className="space-y-6">
                 <FadeIn className="flex items-center gap-2 mb-5 text-sm text-primary font-medium">
                   <Shield size={15} />
                   Zugang gewährt – Ihre persönlichen Dokumente
                 </FadeIn>
-                {protectedDocs.map((doc, i) => (
-                  <FadeIn key={doc.label} delay={i * 0.08}>
-                    <div className="flex items-center justify-between gap-4 bg-white border border-border/70 rounded-2xl px-6 py-5 hover:shadow-md hover:border-accent/30 transition-all duration-200 group">
-                      <div className="flex items-center gap-4">
-                        <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
-                          <FileDown size={20} />
-                        </div>
-                        <div>
-                          <p className="font-medium text-foreground group-hover:text-accent transition-colors">
-                            {doc.label}
-                          </p>
-                          <p className="text-sm text-foreground/55">{doc.desc}</p>
-                        </div>
+                {protectedGroups.length > 0 ? (
+                  protectedGroups.map((group, groupIndex) => (
+                    <FadeIn key={group.category} delay={groupIndex * 0.08}>
+                      <div className="space-y-3">
+                        <h3 className="text-lg font-semibold text-foreground">{group.category}</h3>
+                        {group.files.map((doc) => (
+                          <div
+                            key={doc.path}
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-white border border-border/70 rounded-2xl px-6 py-5 hover:shadow-md hover:border-accent/30 transition-all duration-200 group"
+                          >
+                            <div className="flex items-center gap-4 min-w-0">
+                              <div className="w-11 h-11 bg-accent/10 rounded-xl flex items-center justify-center text-accent shrink-0">
+                                <FileDown size={20} />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="font-medium text-foreground group-hover:text-accent transition-colors break-words">
+                                  {doc.label}
+                                </p>
+                                <p className="text-sm text-foreground/55">
+                                  {doc.format}
+                                  {doc.sizeLabel ? ` · ${doc.sizeLabel}` : ""}
+                                </p>
+                              </div>
+                            </div>
+                            <a
+                              href={`/protected/${encodeProtectedPath(doc.path)}`}
+                              download
+                              className="shrink-0 inline-flex items-center justify-center gap-1.5 text-sm font-medium bg-light text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors self-start sm:self-center"
+                            >
+                              <FileDown size={14} />
+                              {doc.format}
+                            </a>
+                          </div>
+                        ))}
                       </div>
-                      <a
-                        href={`/protected/${doc.filename}`}
-                        download
-                        className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium bg-light text-accent px-3 py-1.5 rounded-lg hover:bg-accent/10 transition-colors"
-                      >
-                        <FileDown size={14} />
-                        PDF
-                      </a>
+                    </FadeIn>
+                  ))
+                ) : (
+                  <FadeIn>
+                    <div className="bg-white border border-border/70 rounded-2xl px-6 py-5 text-sm text-foreground/55">
+                      Aktuell sind keine geschützten Dokumente hinterlegt.
                     </div>
                   </FadeIn>
-                ))}
-                <FadeIn delay={0.3} className="pt-2">
+                )}
+                <FadeIn delay={(protectedGroups.length + 1) * 0.08} className="pt-2">
                   <button
                     onClick={() => setUnlocked(false)}
                     className="text-xs text-foreground/40 hover:text-foreground/60 transition-colors"
