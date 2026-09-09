@@ -77,16 +77,16 @@ export default function Home() {
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
           <div className="max-w-3xl -translate-y-10">
-            <FadeIn>
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
-                Willkommen in der Dellplatzpraxis
-              </p>
+                        <FadeIn>
+              <h1 className="mb-4 text-4xl font-semibold uppercase leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
+                Willkommen in der D.ellplatzpraxis
+              </h1>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <h1 className="mb-4 text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
+              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
                 Kalle Lemke
-              </h1>
+              </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
