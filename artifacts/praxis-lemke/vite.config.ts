@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-export default defineConfig(({ command }) => {
+export default defineConfig(async ({ command }) => {
   // Ports und Base-Paths nur für den lokalen Server / Preview erzwingen, nicht für den Vercel-Build
   let port = 3000;
   if (command === "serve") {
