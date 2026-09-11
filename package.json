@@ -10,8 +10,9 @@
   },
   "private": true,
   "devDependencies": {
-    "typescript": "~5.9.2",
-    "prettier": "^3.8.1"
+    "@anthropic-ai/claude-code": "^2.1.268",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
   },
   "packageManager": "pnpm@10.28.0"
 }

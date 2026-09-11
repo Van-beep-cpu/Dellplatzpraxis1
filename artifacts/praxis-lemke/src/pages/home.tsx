@@ -78,20 +78,20 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
           <div className="max-w-3xl -translate-y-10">
                         <FadeIn>
-              <h1 className="mb-4 text-4xl font-semibold uppercase leading-[1.08] tracking-tight text-foreground sm:mb-6 sm:text-5xl md:text-7xl">
-                Willkommen in der D.ellplatzpraxis
+              <h1 className="mb-3 text-3xl font-medium leading-[1.2] tracking-tight text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
+                D.ellplatzpraxis
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <p className="mb-4 text-sm font-medium uppercase tracking-widest text-foreground/45 sm:mb-6">
+              <p className="mb-6 text-lg font-light tracking-wide text-foreground/70 sm:mb-8 sm:text-xl md:text-2xl">
                 Kalle Lemke
               </p>
             </FadeIn>
 
             <FadeIn delay={0.1}>
               <p className="mb-3 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-5 sm:text-xl md:text-2xl">
-                Privatärztliche Praxis für Gesundheit
+                Psychiatrische Behandlung (ärztlich)
               </p>
             </FadeIn>
 
