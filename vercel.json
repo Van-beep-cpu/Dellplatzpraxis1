@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd artifacts/praxis-lemke && npm run build",
+  "outputDirectory": "artifacts/praxis-lemke/dist/public",
+  "installCommand": "pnpm install"
+}
