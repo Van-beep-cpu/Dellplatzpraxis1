@@ -14,7 +14,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { COOKIE_CONSENT_CHANGED_EVENT, hasExternalServicesConsent, saveCookieConsent } from "@/components/CookieConsent";
 
 import heroBg from "@/assets/images/hero-new.jpeg";
-import drLemke from "@/assets/images/foto.png";
+import drLemke from "@/assets/images/KallePortrait.jpg";
 
 function GoogleMapEmbed() {
   const [canLoadMap, setCanLoadMap] = React.useState(false);
