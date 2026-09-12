@@ -77,5 +77,8 @@
   },
   "dependencies": {
     "react-router-dom": "^7.15.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-arm64": "^4.63.1"
   }
 }
