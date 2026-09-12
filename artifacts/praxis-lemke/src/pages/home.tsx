@@ -390,6 +390,7 @@ export default function Home() {
                 <table className="w-full">
                   <tbody className="divide-y divide-border/40">
                     {[
+                      { day: "Montag", hours: "10:00 – 18:00 Uhr" },
                       { day: "Dienstag", hours: "10:00 – 18:00 Uhr" },
                       { day: "Mittwoch", hours: "10:00 – 18:00 Uhr" },
                       { day: "Donnerstag", hours: "10:00 – 18:00 Uhr" },
