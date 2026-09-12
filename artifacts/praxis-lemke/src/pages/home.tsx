@@ -78,31 +78,35 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 sm:py-16 max-sm:pt-24 max-sm:pb-12">
           <div className="max-w-3xl -translate-y-10">
                         <FadeIn>
-              <h1 className="mb-3 text-3xl font-medium leading-[1.2] tracking-tight text-foreground sm:mb-4 sm:text-4xl md:text-5xl">
-                D.ellplatzpraxis
+              <h1 className="mb-2 text-3xl font-bold leading-[1.15] tracking-tight sm:mb-3 sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-foreground via-foreground/90 to-foreground/85">
+                Willkommen in der Dellplatzpraxis
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.05}>
-              <p className="mb-6 text-lg font-light tracking-wide text-foreground/70 sm:mb-8 sm:text-xl md:text-2xl">
-                Kalle Lemke
-              </p>
+              <div className="mb-8 sm:mb-10 h-1 w-16 bg-gradient-to-r from-[#00A8CC] to-[#00A8CC]/60 rounded-full"></div>
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <p className="mb-3 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-5 sm:text-xl md:text-2xl">
-                Psychiatrische Behandlung (ärztlich)
+              <p className="mb-8 text-xl font-light tracking-wide text-foreground/75 sm:mb-10 sm:text-2xl md:text-3xl">
+                Dr. med. Kalle Lemke
               </p>
             </FadeIn>
 
             <FadeIn delay={0.15}>
-              <p className="mb-6 max-w-xl text-base leading-relaxed text-foreground/55 sm:mb-8 md:text-lg">
-                Begleitung bei psychischen Belastungen – persönlich vor Ort oder per Videosprechstunde.
+              <p className="mb-4 max-w-2xl text-lg font-light leading-relaxed text-foreground/65 sm:mb-6 sm:text-xl md:text-xl">
+                Privatpraxis für Psychiatrie & Psychotherapie
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <p className="mb-8 max-w-xl text-base leading-relaxed text-foreground/55 sm:mb-10 md:text-lg">
+                Spezialisiert auf ADHS, Autismus-Spektrum und psychosomatische Erkrankungen. Persönliche Beratung vor Ort oder per Videosprechstunde.
               </p>
             </FadeIn>
 
 
-            <FadeIn delay={0.2}>
+            <FadeIn delay={0.25}>
               <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-6">
                 <Button
                   asChild
