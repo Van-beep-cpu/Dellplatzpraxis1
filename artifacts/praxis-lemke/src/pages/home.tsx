@@ -377,6 +377,7 @@ export default function Home() {
               <div className="p-5 bg-warm rounded-2xl border border-border/30">
                 <p className="font-medium text-accent mb-2">Wichtige Hinweise:</p>
                 <ul className="space-y-2 text-foreground/70 text-sm">
+                  <li>• Ausschliesslich privat Krankenversicherte und Selbstzahlende</li>
                   <li>• Hausbesuche nach Vereinbarung möglich</li>
                   <li>• Im Notfall wählen Sie bitte die <strong>116117</strong></li>
                 </ul>
@@ -389,11 +390,10 @@ export default function Home() {
                 <table className="w-full">
                   <tbody className="divide-y divide-border/40">
                     {[
-                      { day: "Montag", hours: "11:00 – 18:00" },
-                      { day: "Dienstag", hours: "10:00 – 13:00, 14:00 – 18:00" },
-                      { day: "Mittwoch", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
-                      { day: "Donnerstag", hours: "10:00 – 13:00, 14:00 - 18:00, 19:00 – 21:00" },
-                      { day: "Freitag", hours: "10:00 – 13:00" },
+                      { day: "Dienstag", hours: "10:00 – 18:00 Uhr" },
+                      { day: "Mittwoch", hours: "10:00 – 18:00 Uhr" },
+                      { day: "Donnerstag", hours: "10:00 – 18:00 Uhr" },
+                      { day: "Freitag", hours: "10:00 – 13:00 Uhr" },
                     ].map(({ day, hours }) => (
                       <tr key={day} className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                         <td className="py-3.5 font-medium">{day}</td>
@@ -402,6 +402,9 @@ export default function Home() {
                     ))}
                   </tbody>
                 </table>
+                <div className="mt-4 pt-4 border-t border-border/40">
+                  <p className="text-sm text-foreground/70 font-medium">nur nach vorheriger Terminvergabe</p>
+                </div>
               </div>
             </FadeIn>
           </div>
